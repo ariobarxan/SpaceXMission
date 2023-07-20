@@ -56,15 +56,111 @@
 		EB039C082A696BCA006DEFC5 /* SpaceXMission */ = {
 			isa = PBXGroup;
 			children = (
-				EB039C092A696BCA006DEFC5 /* AppDelegate.swift */,
 				EB039C0B2A696BCA006DEFC5 /* SceneDelegate.swift */,
-				EB039C0D2A696BCA006DEFC5 /* ViewController.swift */,
-				EB039C0F2A696BCA006DEFC5 /* Main.storyboard */,
-				EB039C122A696BCA006DEFC5 /* Assets.xcassets */,
-				EB039C142A696BCA006DEFC5 /* LaunchScreen.storyboard */,
-				EB039C172A696BCA006DEFC5 /* Info.plist */,
+				EB039C092A696BCA006DEFC5 /* AppDelegate.swift */,
+				EB039C252A696C2A006DEFC5 /* Models */,
+				EB039C242A696C26006DEFC5 /* Views */,
+				EB039C232A696C17006DEFC5 /* Controllers */,
+				EB039C222A696C10006DEFC5 /* Repositories */,
+				EB039C212A696C08006DEFC5 /* Services */,
+				EB039C1E2A696BF7006DEFC5 /* Helpers */,
+				EB039C1D2A696BF0006DEFC5 /* Resources */,
 			);
 			path = SpaceXMission;
+			sourceTree = "<group>";
+		};
+		EB039C1D2A696BF0006DEFC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB039C172A696BCA006DEFC5 /* Info.plist */,
+				EB039C122A696BCA006DEFC5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB039C1E2A696BF7006DEFC5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EB039C202A696C02006DEFC5 /* Extensions */,
+				EB039C1F2A696BFD006DEFC5 /* Globals */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EB039C1F2A696BFD006DEFC5 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		EB039C202A696C02006DEFC5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB039C212A696C08006DEFC5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB039C222A696C10006DEFC5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EB039C232A696C17006DEFC5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB039C0D2A696BCA006DEFC5 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EB039C242A696C26006DEFC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB039C282A696C47006DEFC5 /* CustomCells */,
+				EB039C272A696C41006DEFC5 /* CustomViews */,
+				EB039C262A696C33006DEFC5 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EB039C252A696C2A006DEFC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB039C262A696C33006DEFC5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EB039C0F2A696BCA006DEFC5 /* Main.storyboard */,
+				EB039C142A696BCA006DEFC5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EB039C272A696C41006DEFC5 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		EB039C282A696C47006DEFC5 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +385,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M4K2UP2N9Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceXMission/Info.plist;
+				INFOPLIST_FILE = SpaceXMission/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +413,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M4K2UP2N9Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceXMission/Info.plist;
+				INFOPLIST_FILE = SpaceXMission/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
