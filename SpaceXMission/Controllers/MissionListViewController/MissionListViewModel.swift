@@ -9,12 +9,27 @@ import Foundation
 
 final class MissionListViewModel {
     
-    var missions: [Mission] = []
+    var missions: [Mission] = [] {
+        didSet {
+            reloadTableView()
+        }
+    }
     
     var repository: MissionRepositoryProtocol
     var reloadTableView: VoidClosure
     var shouldShowError: (_ message: String) -> ()
     var shouldShowLoading: (Bool) -> ()
+    
+    private var page: Int = 0 {
+        didSet {
+            if page == 1 {
+                limit = 50
+            } else {
+                limit = 20
+            }
+        }
+    }
+    private var limit: Int = 0
     
     init(repository: MissionRepositoryProtocol,
          reloadTableView: @escaping VoidClosure,
@@ -32,10 +47,11 @@ final class MissionListViewModel {
 extension MissionListViewModel {
     
     func fetchNewMissions() async {
+        page += 1
         do {
-            let newMissions = try await repository.fetchNewMissions()
+            missions = try await repository.fetchNewMissions(forPage: page, withLimit: limit)
         } catch {
-            shouldShowError("")
+            shouldShowError("error_fetching_new_missions" .localized())
         }
     }
     

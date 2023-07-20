@@ -15,7 +15,7 @@ final class MissionTableViewCell: UITableViewCell {
     @IBOutlet private(set) weak var statusLabel: UILabel!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib()        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

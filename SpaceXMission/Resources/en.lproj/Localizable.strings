@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  SpaceXMission
+
+  Created by Azhman Adam on 7/20/23.
+  
+*/
+"error_fetching_new_missions" = "We're sorry, but the network appears to be unavailable at the moment. Please try again later.";

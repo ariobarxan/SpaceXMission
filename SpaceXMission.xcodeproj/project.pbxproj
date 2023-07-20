@@ -25,6 +25,8 @@
 		EB2802EF2A6976D0003A8C8D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802EE2A6976D0003A8C8D /* Log.swift */; };
 		EB2802F12A697938003A8C8D /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802F02A697938003A8C8D /* MissionRepository.swift */; };
 		EB2802F42A697B0E003A8C8D /* MissionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802F32A697B0E003A8C8D /* MissionListViewModel.swift */; };
+		EB2802FB2A698DF6003A8C8D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802FA2A698DF6003A8C8D /* StringExtension.swift */; };
+		EB2802FE2A698E30003A8C8D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB2803002A698E30003A8C8D /* Localizable.strings */; };
 		EB73467B2A696E82007B3CD4 /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467A2A696E82007B3CD4 /* StoryBoarded.swift */; };
 		EB73467E2A696EAD007B3CD4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */; };
 		EB7346802A696EDD007B3CD4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467F2A696EDD007B3CD4 /* Coordinator.swift */; };
@@ -57,6 +59,8 @@
 		EB2802EE2A6976D0003A8C8D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		EB2802F02A697938003A8C8D /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
 		EB2802F32A697B0E003A8C8D /* MissionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListViewModel.swift; sourceTree = "<group>"; };
+		EB2802FA2A698DF6003A8C8D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		EB2802FF2A698E30003A8C8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB73467A2A696E82007B3CD4 /* StoryBoarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoarded.swift; sourceTree = "<group>"; };
 		EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		EB73467F2A696EDD007B3CD4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			children = (
 				EB039C172A696BCA006DEFC5 /* Info.plist */,
 				EB039C122A696BCA006DEFC5 /* Assets.xcassets */,
+				EB2803002A698E30003A8C8D /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			children = (
 				EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */,
 				EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */,
+				EB2802FA2A698DF6003A8C8D /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2802FE2A698E30003A8C8D /* Localizable.strings in Resources */,
 				EB039C162A696BCA006DEFC5 /* LaunchScreen.storyboard in Resources */,
 				EB039C132A696BCA006DEFC5 /* Assets.xcassets in Resources */,
 				EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */,
@@ -366,6 +373,7 @@
 				EB7346842A696F24007B3CD4 /* BaseViewController.swift in Sources */,
 				EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */,
 				EB2802E02A6975C1003A8C8D /* RequestURLManager.swift in Sources */,
+				EB2802FB2A698DF6003A8C8D /* StringExtension.swift in Sources */,
 				EB039C0C2A696BCA006DEFC5 /* SceneDelegate.swift in Sources */,
 				EB2802EC2A69763B003A8C8D /* Mission.swift in Sources */,
 				EB73467B2A696E82007B3CD4 /* StoryBoarded.swift in Sources */,
@@ -389,6 +397,14 @@
 				EB039C152A696BCA006DEFC5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EB2803002A698E30003A8C8D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB2802FF2A698E30003A8C8D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
