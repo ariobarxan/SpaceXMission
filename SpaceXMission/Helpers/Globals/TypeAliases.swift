@@ -9,3 +9,5 @@ import UIKit
 
 typealias CoordinatorViewController = UIViewController & StoryBoarded
 typealias TableViewDataSourceAndDelegate = UITableViewDelegate & UITableViewDataSource
+typealias VoidClosure = () -> Void
+typealias completionHandler = () -> Void

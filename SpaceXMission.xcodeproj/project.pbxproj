@@ -23,6 +23,8 @@
 		EB2802EA2A69760A003A8C8D /* LuanchAPIQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802E92A69760A003A8C8D /* LuanchAPIQuery.swift */; };
 		EB2802EC2A69763B003A8C8D /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802EB2A69763B003A8C8D /* Mission.swift */; };
 		EB2802EF2A6976D0003A8C8D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802EE2A6976D0003A8C8D /* Log.swift */; };
+		EB2802F12A697938003A8C8D /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802F02A697938003A8C8D /* MissionRepository.swift */; };
+		EB2802F42A697B0E003A8C8D /* MissionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802F32A697B0E003A8C8D /* MissionListViewModel.swift */; };
 		EB73467B2A696E82007B3CD4 /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467A2A696E82007B3CD4 /* StoryBoarded.swift */; };
 		EB73467E2A696EAD007B3CD4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */; };
 		EB7346802A696EDD007B3CD4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467F2A696EDD007B3CD4 /* Coordinator.swift */; };
@@ -53,6 +55,8 @@
 		EB2802E92A69760A003A8C8D /* LuanchAPIQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuanchAPIQuery.swift; sourceTree = "<group>"; };
 		EB2802EB2A69763B003A8C8D /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		EB2802EE2A6976D0003A8C8D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		EB2802F02A697938003A8C8D /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
+		EB2802F32A697B0E003A8C8D /* MissionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListViewModel.swift; sourceTree = "<group>"; };
 		EB73467A2A696E82007B3CD4 /* StoryBoarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoarded.swift; sourceTree = "<group>"; };
 		EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		EB73467F2A696EDD007B3CD4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		EB039C222A696C10006DEFC5 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				EB2802F02A697938003A8C8D /* MissionRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -154,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				EB7346832A696F24007B3CD4 /* BaseViewController.swift */,
-				EB039C0D2A696BCA006DEFC5 /* MissionListViewController.swift */,
+				EB2802F22A697AF2003A8C8D /* MissionListViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +235,15 @@
 				EB2802EE2A6976D0003A8C8D /* Log.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EB2802F22A697AF2003A8C8D /* MissionListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB039C0D2A696BCA006DEFC5 /* MissionListViewController.swift */,
+				EB2802F32A697B0E003A8C8D /* MissionListViewModel.swift */,
+			);
+			path = MissionListViewController;
 			sourceTree = "<group>";
 		};
 		EB7346792A696E70007B3CD4 /* Coordinators */ = {
@@ -338,12 +352,14 @@
 				EB2802E22A6975CF003A8C8D /* RequestQueryParamManager.swift in Sources */,
 				EB2802E42A6975DD003A8C8D /* RequestHeaderManager.swift in Sources */,
 				EB7346822A696EE7007B3CD4 /* MainCoordinator.swift in Sources */,
+				EB2802F12A697938003A8C8D /* MissionRepository.swift in Sources */,
 				EB2802E62A6975E8003A8C8D /* RequestBodyManager.swift in Sources */,
 				EB039C0A2A696BCA006DEFC5 /* AppDelegate.swift in Sources */,
 				EB2802EF2A6976D0003A8C8D /* Log.swift in Sources */,
 				EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */,
 				EB7346862A696F3A007B3CD4 /* TypeAliases.swift in Sources */,
 				EB73468C2A6972AE007B3CD4 /* MissionTableViewCell.swift in Sources */,
+				EB2802F42A697B0E003A8C8D /* MissionListViewModel.swift in Sources */,
 				EB7346802A696EDD007B3CD4 /* Coordinator.swift in Sources */,
 				EB73467E2A696EAD007B3CD4 /* UIViewControllerExtension.swift in Sources */,
 				EB2802DE2A6975B6003A8C8D /* RequestMethodManager.swift in Sources */,
