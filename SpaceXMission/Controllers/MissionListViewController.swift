@@ -15,6 +15,7 @@ final class MissionListViewController: BaseViewController {
         super.viewDidLoad()
             
         setupViews()
+        
     }
 }
 
