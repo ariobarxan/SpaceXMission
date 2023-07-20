@@ -31,6 +31,7 @@ extension MissionListViewController {
     }
     
     private func setupTableView() {
+        MissionTableViewCell.register(for: missionListTableView)
         missionListTableView.delegate = self
         missionListTableView.dataSource = self
         // TODO: - Set the right amount for the Insets
@@ -42,11 +43,12 @@ extension MissionListViewController {
 extension MissionListViewController: TableViewDataSourceAndDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: MissionTableViewCell.identifier, for: indexPath) as! MissionTableViewCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

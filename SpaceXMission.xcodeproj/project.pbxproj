@@ -20,6 +20,8 @@
 		EB7346842A696F24007B3CD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346832A696F24007B3CD4 /* BaseViewController.swift */; };
 		EB7346862A696F3A007B3CD4 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346852A696F3A007B3CD4 /* TypeAliases.swift */; };
 		EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */; };
+		EB73468C2A6972AE007B3CD4 /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73468A2A6972AE007B3CD4 /* MissionTableViewCell.swift */; };
+		EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		EB7346832A696F24007B3CD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EB7346852A696F3A007B3CD4 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		EB73468A2A6972AE007B3CD4 /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
+		EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 		EB039C282A696C47006DEFC5 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				EB7346892A6972A0007B3CD4 /* MissionTableViewCell */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -190,6 +195,15 @@
 				EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB7346892A6972A0007B3CD4 /* MissionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EB73468A2A6972AE007B3CD4 /* MissionTableViewCell.swift */,
+				EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */,
+			);
+			path = MissionTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +266,7 @@
 			files = (
 				EB039C162A696BCA006DEFC5 /* LaunchScreen.storyboard in Resources */,
 				EB039C132A696BCA006DEFC5 /* Assets.xcassets in Resources */,
+				EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */,
 				EB039C112A696BCA006DEFC5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +282,7 @@
 				EB7346822A696EE7007B3CD4 /* MainCoordinator.swift in Sources */,
 				EB039C0A2A696BCA006DEFC5 /* AppDelegate.swift in Sources */,
 				EB7346862A696F3A007B3CD4 /* TypeAliases.swift in Sources */,
+				EB73468C2A6972AE007B3CD4 /* MissionTableViewCell.swift in Sources */,
 				EB7346802A696EDD007B3CD4 /* Coordinator.swift in Sources */,
 				EB73467E2A696EAD007B3CD4 /* UIViewControllerExtension.swift in Sources */,
 				EB7346842A696F24007B3CD4 /* BaseViewController.swift in Sources */,
