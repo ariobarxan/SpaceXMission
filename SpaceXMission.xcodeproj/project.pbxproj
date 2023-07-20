@@ -19,6 +19,7 @@
 		EB7346822A696EE7007B3CD4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346812A696EE7007B3CD4 /* MainCoordinator.swift */; };
 		EB7346842A696F24007B3CD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346832A696F24007B3CD4 /* BaseViewController.swift */; };
 		EB7346862A696F3A007B3CD4 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346852A696F3A007B3CD4 /* TypeAliases.swift */; };
+		EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EB7346812A696EE7007B3CD4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		EB7346832A696F24007B3CD4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EB7346852A696F3A007B3CD4 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +153,8 @@
 		EB039C262A696C33006DEFC5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				EB039C0F2A696BCA006DEFC5 /* Main.storyboard */,
 				EB039C142A696BCA006DEFC5 /* LaunchScreen.storyboard */,
+				EB039C0F2A696BCA006DEFC5 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */,
+				EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				EB7346802A696EDD007B3CD4 /* Coordinator.swift in Sources */,
 				EB73467E2A696EAD007B3CD4 /* UIViewControllerExtension.swift in Sources */,
 				EB7346842A696F24007B3CD4 /* BaseViewController.swift in Sources */,
+				EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */,
 				EB039C0C2A696BCA006DEFC5 /* SceneDelegate.swift in Sources */,
 				EB73467B2A696E82007B3CD4 /* StoryBoarded.swift in Sources */,
 			);

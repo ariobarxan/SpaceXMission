@@ -7,14 +7,50 @@
 
 import UIKit
 
-class MissionListViewController: BaseViewController {
-
+final class MissionListViewController: BaseViewController {
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var missionListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .red
+            
+        setupViews()
     }
-
-
 }
 
+// MARK: - Setup Functions
+extension MissionListViewController {
+    
+    func setupViews() {
+        setupHeaderView()
+        setupTableView()
+    }
+    
+    private func setupHeaderView() {
+        headerView.backgroundColor = .red
+    }
+    
+    private func setupTableView() {
+        missionListTableView.delegate = self
+        missionListTableView.dataSource = self
+        // TODO: - Set the right amount for the Insets
+        missionListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+    }
+}
+
+// MARK: - TableView Delegate and DataSource Functions
+extension MissionListViewController: TableViewDataSourceAndDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+}

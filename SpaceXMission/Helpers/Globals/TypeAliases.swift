@@ -8,3 +8,4 @@
 import UIKit
 
 typealias CoordinatorViewController = UIViewController & StoryBoarded
+typealias TableViewDataSourceAndDelegate = UITableViewDelegate & UITableViewDataSource
