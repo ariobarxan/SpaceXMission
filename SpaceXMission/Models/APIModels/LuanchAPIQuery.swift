@@ -8,16 +8,26 @@
 import Foundation
 
 struct LaunchAPIQuery {
-    var upcoming: Bool = false
+    var query: APIQuery
     var options: Options
     
     var dict: [String: Any] {
         get {
             let temp: [String: Any] = [
-                "upcoming": upcoming,
+                "query": query.dict,
                 "options": options.dict
             ]
             return temp
+        }
+    }
+}
+
+struct APIQuery {
+    var upcoming: Bool = false
+
+    var dict: [String: Any] {
+        get {
+            return ["upcoming": upcoming]
         }
     }
 }
@@ -30,8 +40,8 @@ struct Options {
     var dict: [String: Any] {
         get {
             let temp: [String: Any] = [
-                "limit": 50,
-                "page": 1,
+                "limit": limit,
+                "page": page,
                 "sort": sort.dict
             ]
             return temp
@@ -41,7 +51,7 @@ struct Options {
 
 struct Sort {
     var key: String = "flight_number"
-    var value: String = "desc"
+    var value: String = "asc"
     
     var dict: [String : Any] {
         get {
@@ -53,3 +63,16 @@ struct Sort {
     }
 }
 
+//{
+//"query": {
+//       "upcoming": false
+//,}
+//   "options": {
+//       "limit": 50,
+//       "page": pageNumber,
+//       "sort": {
+//           "flight_number": "desc"
+//}
+//}
+//
+//}

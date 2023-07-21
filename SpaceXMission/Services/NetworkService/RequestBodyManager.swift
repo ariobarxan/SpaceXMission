@@ -16,10 +16,7 @@ final class RequestBodyManager {
         case .latestMission:
             return nil
         case .launchesWithQuery(let query):
-            let temp: [String : Any] = [
-                "query": query.dict
-            ]
-            return temp
+            return query.dict
         }
     }
 }

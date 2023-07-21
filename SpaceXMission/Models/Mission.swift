@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MissionDoc: Codable {
+struct MissionDoc: Codable, Equatable {
     let docs: [Mission]?
     let totalDocs, limit, totalPages, page: Int?
     let pagingCounter: Int?
@@ -16,7 +16,7 @@ struct MissionDoc: Codable {
 }
 
 // MARK: - Mission
-struct Mission: Codable {
+struct Mission: Codable, Equatable {
     let links: Links?
     let net: Bool?
     let rocket: String?
@@ -50,7 +50,7 @@ struct Mission: Codable {
 }
 
 // MARK: - Links
-struct Links: Codable {
+struct Links: Codable, Equatable {
     let patch: Patch?
     let reddit: Reddit?
     let webcast: String?
@@ -65,11 +65,11 @@ struct Links: Codable {
 }
 
 // MARK: - Patch
-struct Patch: Codable {
+struct Patch: Codable, Equatable {
     let small, large: String?
 }
 
 // MARK: - Reddit
-struct Reddit: Codable {
+struct Reddit: Codable, Equatable {
     let launch: String?
 }

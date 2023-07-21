@@ -17,8 +17,8 @@ final class MissionListViewModel {
     
     var repository: MissionRepositoryProtocol
     var reloadTableView: VoidClosure
-    var shouldShowError: (_ message: String) -> ()
-    var shouldShowLoading: (Bool) -> ()
+    var showError: (_ message: String) -> ()
+    var handleShowLoading: (Bool) -> ()
     
     private var page: Int = 0 {
         didSet {
@@ -33,13 +33,17 @@ final class MissionListViewModel {
     
     init(repository: MissionRepositoryProtocol,
          reloadTableView: @escaping VoidClosure,
-         shouldShowError: @escaping (_ message: String) -> Void,
-         shouldShowLoading: @escaping (Bool) -> Void
+         showError: @escaping (_ message: String) -> Void,
+         handleShowLoading: @escaping (Bool) -> Void
     ) {
         self.repository = repository
         self.reloadTableView = reloadTableView
-        self.shouldShowError = shouldShowError
-        self.shouldShowLoading = shouldShowLoading
+        self.showError = showError
+        self.handleShowLoading = handleShowLoading
+        
+        Task{
+            await fetchNewMissions()
+        }
     }
 }
 
@@ -49,9 +53,10 @@ extension MissionListViewModel {
     func fetchNewMissions() async {
         page += 1
         do {
-            missions = try await repository.fetchNewMissions(forPage: page, withLimit: limit)
+            let newMissions = try await repository.fetchNewMissions(forPage: page, withLimit: limit)
+            missions.appendIfNotDuplicated(contentsOf: newMissions)
         } catch {
-            shouldShowError("error_fetching_new_missions" .localized())
+            showError("error_fetching_new_missions" .localized())
         }
     }
     

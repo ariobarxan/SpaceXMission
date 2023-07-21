@@ -41,7 +41,7 @@ class WebService {
         do {
             let decoder = JSONDecoder()
             let result = try decoder.decode(T.self, from: data)
-            Log.d("\(result as Any)")
+            //Log.d("\(result as Any)")
             return result
         } catch DecodingError.dataCorrupted(let context) {
             Log.d("\(context)")
