@@ -8,3 +8,7 @@
 - [ ] Testing
 - [ ] Convert at least one of the ViewModel to Combine flow
 - [ ] Implement pagination -> TableView with CollectionView or CollectionView Composition or read
+- [ ] We only support png support other types of images both for caching and showing .svg and etc
+- [ ] More robust network layer specially for handling different http response code
+- [ ] Making Network layer a target 
+- [ ] Implement saving to file manager as a cache for images

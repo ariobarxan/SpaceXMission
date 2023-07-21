@@ -47,7 +47,7 @@ extension MissionTableViewCell {
     
     private func setupMissionIconImageView() {
         let imageURLString = mission.links?.patch?.small ?? ""
-        missionIconImageView.setup(withURLString: imageURLString)
+        missionIconImageView.setup(withURLString: imageURLString, name: mission.id!)
     }
     
     private func setupDescriptionLabel(){

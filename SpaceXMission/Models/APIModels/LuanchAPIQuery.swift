@@ -51,7 +51,7 @@ struct Options {
 
 struct Sort {
     var key: String = "flight_number"
-    var value: String = "asc"
+    var value: String = "desc"
     
     var dict: [String : Any] {
         get {

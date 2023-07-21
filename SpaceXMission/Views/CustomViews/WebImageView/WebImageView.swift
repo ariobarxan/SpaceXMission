@@ -10,18 +10,18 @@ import UIKit
 final class WebImageView: UIImageView {
     private var viewModel: WebImageViewModel!
     
-    func setup(withURLString urlString: String){
+    func setup(withURLString urlString: String, name: String){
         viewModel = WebImageViewModel(urlString: urlString) { [unowned self] shouldShowLoading in
             self.showLoading(shouldShowLoading: shouldShowLoading)
         }
         Task {
-            await setupImage()
+            await setupImage(name: name)
         }
     }
     
-    private func setupImage() async {
+    private func setupImage(name: String) async {
         do {
-            let data = try await viewModel.getImageData()
+            let data = try await viewModel.getImageData(name: name)
             let image = UIImage(data: data)
             self.image = image
         } catch {
