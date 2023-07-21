@@ -58,5 +58,4 @@ extension MissionTableViewCell {
     private func setupStatus() {
         statusLabel.text = (mission.success ?? false) ? "Succeed" : "Failed"
     }
-    
 }

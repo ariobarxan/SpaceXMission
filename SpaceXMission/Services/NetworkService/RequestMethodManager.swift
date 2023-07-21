@@ -19,7 +19,7 @@ extension RequestMethodManager {
     
     static func getHTTPMethod(for request: RequestManager) -> String {
         switch request {
-        case .latestMission:
+        case .latestMission, .image:
             return RequestMethodManager.get.rawValue
         case .launchesWithQuery:
             return RequestMethodManager.post.rawValue

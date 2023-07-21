@@ -13,7 +13,7 @@ final class RequestBodyManager {
     
     func getBody(for request: RequestManager) -> [String: Any]? {
         switch request {
-        case .latestMission:
+        case .latestMission, .image:
             return nil
         case .launchesWithQuery(let query):
             return query.dict

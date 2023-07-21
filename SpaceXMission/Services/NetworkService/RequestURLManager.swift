@@ -23,6 +23,8 @@ final class RequestURLManager {
             return URL(string: "https://api.spacexdata.com/v5/launches/latest")
         case .launchesWithQuery:
             return URL(string: baseURL + "query")
+        case .image(let urlString):
+            return URL(string: urlString)
         }
     }
 }

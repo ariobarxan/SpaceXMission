@@ -25,7 +25,7 @@ final class RequestHeaderManager {
         let defaultHeaders = [(value: contentTypeValue, field:contentTypeField)]
         
         switch request {
-        case .latestMission, .launchesWithQuery:
+        case .latestMission, .launchesWithQuery, .image:
             return  defaultHeaders
         }
     }

@@ -14,7 +14,7 @@ final class RequestQueryParamManager {
     
     func getQueryParam(for request: RequestManager) -> [String: String]? {
         switch request {
-        case .latestMission, .launchesWithQuery:
+        case .latestMission, .launchesWithQuery, .image:
             return nil
         }
     }

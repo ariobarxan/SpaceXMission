@@ -10,6 +10,7 @@ import Foundation
 enum RequestManager {
     case latestMission
     case launchesWithQuery(query: LaunchAPIQuery)
+    case image(url: String)
     
     func asURLRequest() throws -> URLRequest {
         guard let url = RequestURLManager.shared.getURL(for: self) else {
