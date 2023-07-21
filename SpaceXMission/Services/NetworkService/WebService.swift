@@ -7,13 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case urlStringISInvalid
-    case invalidResponse
-    case badUrl
-    case decodingError
-}
-
 class WebService {
     
     static let shared = WebService()
@@ -54,7 +47,7 @@ class WebService {
         do {
             let decoder = JSONDecoder()
             let result = try decoder.decode(T.self, from: data)
-            Log.d("\(result as Any)")
+            //Log.d("\(result as Any)")
             return result
         } catch DecodingError.dataCorrupted(let context) {
             Log.d("\(context)")

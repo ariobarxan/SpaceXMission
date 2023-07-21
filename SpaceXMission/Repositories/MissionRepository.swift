@@ -11,10 +11,6 @@ protocol MissionRepositoryProtocol {
     func fetchNewMissions(forPage page: Int, withLimit limit: Int) async throws -> [Mission]
 }
 
-enum DataError: Error {
-    case noData
-}
-
 final class MissionRepository: MissionRepositoryProtocol {
         
     private var missionDoc: MissionDoc!
@@ -26,7 +22,7 @@ final class MissionRepository: MissionRepositoryProtocol {
         let query = LaunchAPIQuery(query: apiQuery, options: options)
         let missionDoc = try await WebService.shared.fetchLaunchWithQuery(query: query)
         guard let missions = missionDoc.docs else {
-            throw DataError.noData
+            throw RepositoryError.noData
         }
         return missions
     }

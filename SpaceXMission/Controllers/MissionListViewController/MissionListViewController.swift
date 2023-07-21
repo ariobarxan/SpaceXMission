@@ -67,7 +67,6 @@ extension MissionListViewController {
     
     private func setupViewModel() {
         viewModel = MissionListViewModel(
-            repository: MissionRepository(),
             reloadTableView: { [unowned self] in
                 self.reloadTableView()
             },

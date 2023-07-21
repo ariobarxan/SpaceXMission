@@ -25,7 +25,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNo-S3-9gG" userLabel="Mission Icon">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNo-S3-9gG" userLabel="Mission Icon" customClass="WebImageView" customModule="SpaceXMission" customModuleProvider="target">
                         <rect key="frame" x="269" y="16" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="JNo-S3-9gG" secondAttribute="height" id="7fS-1T-L2M"/>
@@ -74,7 +74,7 @@
                 <outlet property="dateLabel" destination="od4-jg-rD8" id="vWF-Zf-Z4C"/>
                 <outlet property="descriptionLabel" destination="mT1-fJ-Xvx" id="Ao2-TJ-boE"/>
                 <outlet property="flightNumberLabel" destination="VcQ-l8-Pp6" id="BhY-XG-zBC"/>
-                <outlet property="missionIconImageView" destination="JNo-S3-9gG" id="daY-YK-lWb"/>
+                <outlet property="missionIconImageView" destination="JNo-S3-9gG" id="SNA-Xc-hg5"/>
                 <outlet property="statusLabel" destination="mru-WA-POt" id="kre-CI-7EI"/>
             </connections>
             <point key="canvasLocation" x="126.71755725190839" y="41.549295774647888"/>

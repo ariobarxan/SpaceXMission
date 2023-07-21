@@ -9,7 +9,7 @@ import UIKit
 
 final class MissionTableViewCell: UITableViewCell {
     @IBOutlet private(set) weak var flightNumberLabel: UILabel!
-    @IBOutlet private(set) weak var missionIconImageView: UIImageView!
+    @IBOutlet private(set) weak var missionIconImageView: WebImageView!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
     @IBOutlet private(set) weak var dateLabel: UILabel!
     @IBOutlet private(set) weak var statusLabel: UILabel!
@@ -45,7 +45,10 @@ extension MissionTableViewCell {
         flightNumberLabel.text = "\(mission.flightNumber ?? 0) "
     }
     
-    private func setupMissionIconImageView() {    }
+    private func setupMissionIconImageView() {
+        let imageURLString = mission.links?.patch?.small ?? ""
+        missionIconImageView.setup(withURLString: imageURLString)
+    }
     
     private func setupDescriptionLabel(){
         descriptionLabel.text = mission.capsules?.description

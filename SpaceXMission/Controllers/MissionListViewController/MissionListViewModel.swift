@@ -31,7 +31,7 @@ final class MissionListViewModel {
     }
     private var limit: Int = 0
     
-    init(repository: MissionRepositoryProtocol,
+    init(repository: MissionRepositoryProtocol = MissionRepository(),
          reloadTableView: @escaping VoidClosure,
          showError: @escaping (_ message: String) -> Void,
          handleShowLoading: @escaping (Bool) -> Void
