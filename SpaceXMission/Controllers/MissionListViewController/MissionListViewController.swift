@@ -8,6 +8,7 @@
 import UIKit
 
 final class MissionListViewController: BaseViewController {
+
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var missionListTableView: UITableView!
     
@@ -45,13 +46,6 @@ extension MissionListViewController {
         missionListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
     }
     
-    
-    private func reloadTableView() {
-        mainThread {
-            self.missionListTableView.reloadData()
-        }
-    }
-    
     private func showError(withMessage message: String) {
         
     }
@@ -77,6 +71,12 @@ extension MissionListViewController {
                 self.handleShowLoading(shouldShowLoading: shouldShowLoading)
             })
     }
+    
+    private func reloadTableView() {
+        mainThread {
+            self.missionListTableView.reloadData()
+        }
+    }
 }
 
 // MARK: - TableView Delegate and DataSource Functions
@@ -93,7 +93,8 @@ extension MissionListViewController: TableViewDataSourceAndDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let mission = viewModel.missions[indexPath.row]
+        (coordinator as! MainCoordinator).showMissionDetailViewController(forMission: mission)
     }
     
 }

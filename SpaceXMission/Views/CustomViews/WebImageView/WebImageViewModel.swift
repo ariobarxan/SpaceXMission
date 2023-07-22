@@ -21,8 +21,8 @@ final class WebImageViewModel {
         self.handleShowLoading = handleShowLoading
     }
     
-    func getImageData(name: String) async throws -> Data{
-        let imageData = try await repository.fetchImage(withURLString: urlString, name: name)
+    func getImageData() async throws -> Data{
+        let imageData = try await repository.fetchImage(withURLString: urlString)
         return imageData
     }
 }

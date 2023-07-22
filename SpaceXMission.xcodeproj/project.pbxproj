@@ -44,6 +44,10 @@
 		EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */; };
 		EB73468C2A6972AE007B3CD4 /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73468A2A6972AE007B3CD4 /* MissionTableViewCell.swift */; };
 		EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */; };
+		EB8748772A6AC766003B9C4B /* MissionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8748762A6AC766003B9C4B /* MissionDetailViewController.swift */; };
+		EB8748792A6AD14E003B9C4B /* MissionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8748782A6AD14E003B9C4B /* MissionDetailsViewModel.swift */; };
+		EB8748812A6B0852003B9C4B /* MissionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB87487F2A6B0852003B9C4B /* MissionDetailTableViewCell.swift */; };
+		EB8748822A6B0852003B9C4B /* MissionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8748802A6B0852003B9C4B /* MissionDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +91,10 @@
 		EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		EB73468A2A6972AE007B3CD4 /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
 		EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionTableViewCell.xib; sourceTree = "<group>"; };
+		EB8748762A6AC766003B9C4B /* MissionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewController.swift; sourceTree = "<group>"; };
+		EB8748782A6AD14E003B9C4B /* MissionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewModel.swift; sourceTree = "<group>"; };
+		EB87487F2A6B0852003B9C4B /* MissionDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailTableViewCell.swift; sourceTree = "<group>"; };
+		EB8748802A6B0852003B9C4B /* MissionDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +195,7 @@
 			children = (
 				EB7346832A696F24007B3CD4 /* BaseViewController.swift */,
 				EB2802F22A697AF2003A8C8D /* MissionListViewController */,
+				EB8748752A6AC71D003B9C4B /* MissionDetailViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				EB7346892A6972A0007B3CD4 /* MissionTableViewCell */,
+				EB87487A2A6AD6FC003B9C4B /* MissionDetailTableViewCell */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -322,6 +332,24 @@
 			path = MissionTableViewCell;
 			sourceTree = "<group>";
 		};
+		EB8748752A6AC71D003B9C4B /* MissionDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB8748762A6AC766003B9C4B /* MissionDetailViewController.swift */,
+				EB8748782A6AD14E003B9C4B /* MissionDetailsViewModel.swift */,
+			);
+			path = MissionDetailViewController;
+			sourceTree = "<group>";
+		};
+		EB87487A2A6AD6FC003B9C4B /* MissionDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EB87487F2A6B0852003B9C4B /* MissionDetailTableViewCell.swift */,
+				EB8748802A6B0852003B9C4B /* MissionDetailTableViewCell.xib */,
+			);
+			path = MissionDetailTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,6 +413,7 @@
 				EB039C132A696BCA006DEFC5 /* Assets.xcassets in Resources */,
 				EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */,
 				EB039C112A696BCA006DEFC5 /* Main.storyboard in Resources */,
+				EB8748822A6B0852003B9C4B /* MissionDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +436,12 @@
 				EB7346822A696EE7007B3CD4 /* MainCoordinator.swift in Sources */,
 				EB2802F12A697938003A8C8D /* MissionRepository.swift in Sources */,
 				EB2802E62A6975E8003A8C8D /* RequestBodyManager.swift in Sources */,
+				EB8748812A6B0852003B9C4B /* MissionDetailTableViewCell.swift in Sources */,
 				EB039C0A2A696BCA006DEFC5 /* AppDelegate.swift in Sources */,
 				EB2802EF2A6976D0003A8C8D /* Log.swift in Sources */,
+				EB8748772A6AC766003B9C4B /* MissionDetailViewController.swift in Sources */,
 				EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */,
+				EB8748792A6AD14E003B9C4B /* MissionDetailsViewModel.swift in Sources */,
 				EB7346862A696F3A007B3CD4 /* TypeAliases.swift in Sources */,
 				EB73468C2A6972AE007B3CD4 /* MissionTableViewCell.swift in Sources */,
 				EB2803362A6A622E003A8C8D /* NetworkError.swift in Sources */,

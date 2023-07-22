@@ -17,7 +17,8 @@ final class MissionTableViewCell: UITableViewCell {
     private var mission: Mission!
     
     override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,7 +52,7 @@ extension MissionTableViewCell {
     }
     
     private func setupDescriptionLabel(){
-        descriptionLabel.text = mission.capsules?.description
+        descriptionLabel.text = mission.details ?? ""
     }
     
     private func setupDateLabel() {

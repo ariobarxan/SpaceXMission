@@ -24,6 +24,13 @@ final class MainCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func showMissionDetailViewController(forMission mission: Mission) {
+        let vc = MissionDetailViewController.instantiate(.Main)
+        vc.coordinator = self
+        vc.setup(forMission: mission)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {

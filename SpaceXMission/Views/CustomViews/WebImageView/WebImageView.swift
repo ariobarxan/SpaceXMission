@@ -21,7 +21,7 @@ final class WebImageView: UIImageView {
     
     private func setupImage(name: String) async {
         do {
-            let data = try await viewModel.getImageData(name: name)
+            let data = try await viewModel.getImageData()
             let image = UIImage(data: data)
             self.image = image
         } catch {

@@ -21,6 +21,7 @@ struct Mission: Codable, Equatable {
     let net: Bool?
     let rocket: String?
     let success: Bool?
+    let details: String?
     let capsules, payloads: [String]?
     let launchpad: String?
     let flightNumber: Int?
@@ -34,7 +35,7 @@ struct Mission: Codable, Equatable {
 
     enum CodingKeys: String, CodingKey {
         case links
-        case net, rocket, success, capsules, payloads, launchpad
+        case net, rocket, success, capsules, payloads, launchpad, details
         case flightNumber = "flight_number"
         case name
         case dateUTC = "date_utc"
@@ -51,14 +52,16 @@ struct Mission: Codable, Equatable {
 
 // MARK: - Links
 struct Links: Codable, Equatable {
+    
     let patch: Patch?
     let reddit: Reddit?
+    let flickr: Flickr?
     let webcast: String?
     let youtubeID: String?
     let wikipedia: String?
 
     enum CodingKeys: String, CodingKey {
-        case patch, reddit, webcast
+        case patch, reddit, flickr, webcast
         case youtubeID = "youtube_id"
         case wikipedia
     }
@@ -72,4 +75,9 @@ struct Patch: Codable, Equatable {
 // MARK: - Reddit
 struct Reddit: Codable, Equatable {
     let launch: String?
+}
+
+struct Flickr: Codable, Equatable {
+    let small: [String]?
+    let original: [String]?
 }

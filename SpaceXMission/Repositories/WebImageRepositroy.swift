@@ -8,7 +8,7 @@
 import UIKit
 
 protocol WebImageRepositoryProtocol {
-    func fetchImage(withURLString urlString: String,  name: String) async throws -> Data
+    func fetchImage(withURLString urlString: String) async throws -> Data
 }
 
 final class WebImageRepository: WebImageRepositoryProtocol {
@@ -16,7 +16,7 @@ final class WebImageRepository: WebImageRepositoryProtocol {
     private let imageCacheService = ImageCacheService.shared
     var image: UIImage? = nil
 
-    func fetchImage(withURLString urlString: String, name: String) async throws -> Data {
+    func fetchImage(withURLString urlString: String) async throws -> Data {
         if let image = imageCacheService.fetchImage(withKey: urlString) {
             self.imageData = image.pngData()
             return imageData

@@ -12,3 +12,4 @@
 - [ ] More robust network layer specially for handling different http response code
 - [ ] Making Network layer a target 
 - [ ] Implement saving to file manager as a cache for images
+- [ ] CollectionView for showing missions images
