@@ -38,7 +38,12 @@ extension MissionDetailsViewModel {
         detailsData.append(detailsTuple)
         
         let missionDateTitle = "Execution Date"
-        let missionDate = mission.dateLocal ?? "No information about data"
+        var missionDate = ""
+        if let date = mission.dateLocal, let formattedDate = Date.getFormattedDate(from: date) {
+            missionDate = formattedDate
+        } else {
+            missionDate = "no_date_error".localized()
+        }
         let missionDateTuple = (missionDateTitle, missionDate, false)
         detailsData.append(missionDateTuple)
         

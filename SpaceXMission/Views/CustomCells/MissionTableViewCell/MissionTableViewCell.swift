@@ -43,7 +43,7 @@ extension MissionTableViewCell {
     }
     
     private func setupFlightNumberLabel() {
-        flightNumberLabel.text = "\(mission.flightNumber ?? 0) "
+        flightNumberLabel.text = "flight_number".localized() + "\(mission.flightNumber ?? 0)"
     }
     
     private func setupMissionIconImageView() {
@@ -56,10 +56,15 @@ extension MissionTableViewCell {
     }
     
     private func setupDateLabel() {
-        dateLabel.text = mission.dateUTC
+        if let date = mission.dateLocal, let formattedDate = Date.getFormattedDate(from: date)  {
+            dateLabel.text = "mission_date".localized() + formattedDate
+        } else {
+            dateLabel.text = "no_date_error".localized()
+        }
     }
     
     private func setupStatus() {
-        statusLabel.text = (mission.success ?? false) ? "Succeed" : "Failed"
+        let missionStatus = (mission.success ?? false) ? "Succeed" : "Failed"
+        statusLabel.text = "mission_status".localized() + missionStatus
     }
 }

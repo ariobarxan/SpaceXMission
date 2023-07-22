@@ -9,37 +9,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="202" id="KGk-i7-Jjw" customClass="MissionTableViewCell" customModule="SpaceXMission" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="278" id="KGk-i7-Jjw" customClass="MissionTableViewCell" customModule="SpaceXMission" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="278"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="278"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight number: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcQ-l8-Pp6" userLabel="Flight number">
-                        <rect key="frame" x="15.999999999999993" y="23" width="114.33333333333331" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight number: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="VcQ-l8-Pp6" userLabel="Flight number">
+                        <rect key="frame" x="16" y="15" width="245" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="NiE-kS-DwN"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JNo-S3-9gG" userLabel="Mission Icon" customClass="WebImageView" customModule="SpaceXMission" customModuleProvider="target">
-                        <rect key="frame" x="269" y="16" width="35" height="35"/>
+                        <rect key="frame" x="269" y="8" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="JNo-S3-9gG" secondAttribute="height" id="7fS-1T-L2M"/>
                             <constraint firstAttribute="width" constant="35" id="iAx-lc-7Jx"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT1-fJ-Xvx" userLabel="Description">
-                        <rect key="frame" x="16" y="52" width="288" height="105"/>
+                        <rect key="frame" x="16" y="44" width="288" height="168"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od4-jg-rD8" userLabel="Date">
-                        <rect key="frame" x="15.999999999999996" y="165" width="40.666666666666657" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="od4-jg-rD8" userLabel="Date">
+                        <rect key="frame" x="16" y="220" width="288" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="epx-2S-oa8"/>
                         </constraints>
@@ -47,24 +47,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mru-WA-POt" userLabel="Status">
-                        <rect key="frame" x="246" y="165" width="58" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="mru-WA-POt" userLabel="Status">
+                        <rect key="frame" x="16" y="249" width="288" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="lMR-my-Nlk"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="mru-WA-POt" firstAttribute="top" secondItem="od4-jg-rD8" secondAttribute="bottom" constant="8" id="7xW-gG-Kbk"/>
                     <constraint firstItem="mT1-fJ-Xvx" firstAttribute="trailing" secondItem="JNo-S3-9gG" secondAttribute="trailing" id="EVh-x6-B3L"/>
-                    <constraint firstItem="mru-WA-POt" firstAttribute="trailing" secondItem="JNo-S3-9gG" secondAttribute="trailing" id="GwF-TY-xM4"/>
                     <constraint firstItem="od4-jg-rD8" firstAttribute="leading" secondItem="VcQ-l8-Pp6" secondAttribute="leading" id="IS8-AD-MZE"/>
+                    <constraint firstItem="mru-WA-POt" firstAttribute="trailing" secondItem="JNo-S3-9gG" secondAttribute="trailing" id="Ixl-2d-ki1"/>
                     <constraint firstItem="mT1-fJ-Xvx" firstAttribute="leading" secondItem="VcQ-l8-Pp6" secondAttribute="leading" id="JYx-Q3-e89"/>
                     <constraint firstItem="VcQ-l8-Pp6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="M0R-3j-CCY"/>
                     <constraint firstItem="VcQ-l8-Pp6" firstAttribute="centerY" secondItem="JNo-S3-9gG" secondAttribute="centerY" id="NcH-pF-zbF"/>
-                    <constraint firstItem="mru-WA-POt" firstAttribute="bottom" secondItem="od4-jg-rD8" secondAttribute="bottom" id="aA9-Iw-ViQ"/>
+                    <constraint firstItem="od4-jg-rD8" firstAttribute="trailing" secondItem="JNo-S3-9gG" secondAttribute="trailing" id="PEH-fs-GYQ"/>
+                    <constraint firstItem="mru-WA-POt" firstAttribute="leading" secondItem="VcQ-l8-Pp6" secondAttribute="leading" id="UkD-ns-NAh"/>
+                    <constraint firstItem="JNo-S3-9gG" firstAttribute="leading" secondItem="VcQ-l8-Pp6" secondAttribute="trailing" constant="8" id="Xfa-uv-0DE"/>
                     <constraint firstItem="od4-jg-rD8" firstAttribute="top" secondItem="mT1-fJ-Xvx" secondAttribute="bottom" constant="8" id="fRT-Lw-p8l"/>
-                    <constraint firstItem="JNo-S3-9gG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gbR-gO-Zob"/>
-                    <constraint firstAttribute="bottom" secondItem="od4-jg-rD8" secondAttribute="bottom" constant="16" id="ipx-8q-0Oa"/>
+                    <constraint firstItem="JNo-S3-9gG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gbR-gO-Zob"/>
+                    <constraint firstAttribute="bottom" secondItem="mru-WA-POt" secondAttribute="bottom" constant="8" id="hR7-Ff-rwN"/>
                     <constraint firstAttribute="trailing" secondItem="JNo-S3-9gG" secondAttribute="trailing" constant="16" id="uJc-NW-RxV"/>
                     <constraint firstItem="mT1-fJ-Xvx" firstAttribute="top" secondItem="VcQ-l8-Pp6" secondAttribute="bottom" constant="8" id="yOt-kj-Er1"/>
                 </constraints>
@@ -77,7 +83,7 @@
                 <outlet property="missionIconImageView" destination="JNo-S3-9gG" id="SNA-Xc-hg5"/>
                 <outlet property="statusLabel" destination="mru-WA-POt" id="kre-CI-7EI"/>
             </connections>
-            <point key="canvasLocation" x="126.71755725190839" y="41.549295774647888"/>
+            <point key="canvasLocation" x="126.71755725190839" y="68.309859154929583"/>
         </tableViewCell>
     </objects>
 </document>

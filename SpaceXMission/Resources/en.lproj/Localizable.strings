@@ -6,3 +6,7 @@
   
 */
 "error_fetching_new_missions" = "We're sorry, but the network appears to be unavailable at the moment. Please try again later.";
+"flight_number" = "Flight Number: ";
+"mission_date" = "Mission Date: ";
+"mission_status" = "Mission Status: ";
+"no_date_error" = "There is no date recorded for this mission";
