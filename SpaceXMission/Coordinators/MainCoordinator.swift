@@ -25,7 +25,7 @@ final class MainCoordinator: NSObject, Coordinator {
     }
     
     func showMissionDetailViewController(forMission mission: Mission) {
-        let vc = MissionDetailViewController.instantiate(.Main)
+        let vc = MissionDetailsViewController.instantiate(.Main)
         vc.coordinator = self
         vc.setup(forMission: mission)
         navigationController.pushViewController(vc, animated: true)

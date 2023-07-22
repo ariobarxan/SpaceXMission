@@ -34,6 +34,9 @@
 		EB2803342A6A621C003A8C8D /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2803332A6A621C003A8C8D /* RepositoryError.swift */; };
 		EB2803362A6A622E003A8C8D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2803352A6A622E003A8C8D /* NetworkError.swift */; };
 		EB2803382A6A63C5003A8C8D /* WebImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2803372A6A63C5003A8C8D /* WebImageViewModel.swift */; };
+		EB58831E2A6B974F003847A4 /* MissionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58831D2A6B974F003847A4 /* MissionDetailsViewController.swift */; };
+		EB5883252A6B98DE003847A4 /* MissionDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5883232A6B98DE003847A4 /* MissionDetailsTableViewCell.swift */; };
+		EB5883262A6B98DE003847A4 /* MissionDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5883242A6B98DE003847A4 /* MissionDetailsTableViewCell.xib */; };
 		EB67CB942A6A7EBF0050F37D /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67CB932A6A7EBF0050F37D /* ImageCacheService.swift */; };
 		EB73467B2A696E82007B3CD4 /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467A2A696E82007B3CD4 /* StoryBoarded.swift */; };
 		EB73467E2A696EAD007B3CD4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */; };
@@ -44,10 +47,7 @@
 		EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */; };
 		EB73468C2A6972AE007B3CD4 /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73468A2A6972AE007B3CD4 /* MissionTableViewCell.swift */; };
 		EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */; };
-		EB8748772A6AC766003B9C4B /* MissionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8748762A6AC766003B9C4B /* MissionDetailViewController.swift */; };
 		EB8748792A6AD14E003B9C4B /* MissionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8748782A6AD14E003B9C4B /* MissionDetailsViewModel.swift */; };
-		EB8748812A6B0852003B9C4B /* MissionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB87487F2A6B0852003B9C4B /* MissionDetailTableViewCell.swift */; };
-		EB8748822A6B0852003B9C4B /* MissionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8748802A6B0852003B9C4B /* MissionDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +81,9 @@
 		EB2803332A6A621C003A8C8D /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		EB2803352A6A622E003A8C8D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		EB2803372A6A63C5003A8C8D /* WebImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageViewModel.swift; sourceTree = "<group>"; };
+		EB58831D2A6B974F003847A4 /* MissionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewController.swift; sourceTree = "<group>"; };
+		EB5883232A6B98DE003847A4 /* MissionDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		EB5883242A6B98DE003847A4 /* MissionDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		EB67CB932A6A7EBF0050F37D /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		EB73467A2A696E82007B3CD4 /* StoryBoarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoarded.swift; sourceTree = "<group>"; };
 		EB73467D2A696EAD007B3CD4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -91,10 +94,7 @@
 		EB7346872A697196007B3CD4 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		EB73468A2A6972AE007B3CD4 /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
 		EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionTableViewCell.xib; sourceTree = "<group>"; };
-		EB8748762A6AC766003B9C4B /* MissionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewController.swift; sourceTree = "<group>"; };
 		EB8748782A6AD14E003B9C4B /* MissionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewModel.swift; sourceTree = "<group>"; };
-		EB87487F2A6B0852003B9C4B /* MissionDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailTableViewCell.swift; sourceTree = "<group>"; };
-		EB8748802A6B0852003B9C4B /* MissionDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +195,7 @@
 			children = (
 				EB7346832A696F24007B3CD4 /* BaseViewController.swift */,
 				EB2802F22A697AF2003A8C8D /* MissionListViewController */,
-				EB8748752A6AC71D003B9C4B /* MissionDetailViewController */,
+				EB58831F2A6B9763003847A4 /* MissionDetailsViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				EB7346892A6972A0007B3CD4 /* MissionTableViewCell */,
-				EB87487A2A6AD6FC003B9C4B /* MissionDetailTableViewCell */,
+				EB5883202A6B9837003847A4 /* MissionDetailsTableViewCell */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -294,6 +294,24 @@
 			path = WebImageView;
 			sourceTree = "<group>";
 		};
+		EB58831F2A6B9763003847A4 /* MissionDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB58831D2A6B974F003847A4 /* MissionDetailsViewController.swift */,
+				EB8748782A6AD14E003B9C4B /* MissionDetailsViewModel.swift */,
+			);
+			path = MissionDetailsViewController;
+			sourceTree = "<group>";
+		};
+		EB5883202A6B9837003847A4 /* MissionDetailsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EB5883232A6B98DE003847A4 /* MissionDetailsTableViewCell.swift */,
+				EB5883242A6B98DE003847A4 /* MissionDetailsTableViewCell.xib */,
+			);
+			path = MissionDetailsTableViewCell;
+			sourceTree = "<group>";
+		};
 		EB67CB922A6A7EA40050F37D /* ImageCacheService */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,24 +348,6 @@
 				EB73468B2A6972AE007B3CD4 /* MissionTableViewCell.xib */,
 			);
 			path = MissionTableViewCell;
-			sourceTree = "<group>";
-		};
-		EB8748752A6AC71D003B9C4B /* MissionDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				EB8748762A6AC766003B9C4B /* MissionDetailViewController.swift */,
-				EB8748782A6AD14E003B9C4B /* MissionDetailsViewModel.swift */,
-			);
-			path = MissionDetailViewController;
-			sourceTree = "<group>";
-		};
-		EB87487A2A6AD6FC003B9C4B /* MissionDetailTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				EB87487F2A6B0852003B9C4B /* MissionDetailTableViewCell.swift */,
-				EB8748802A6B0852003B9C4B /* MissionDetailTableViewCell.xib */,
-			);
-			path = MissionDetailTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,8 +412,8 @@
 				EB039C162A696BCA006DEFC5 /* LaunchScreen.storyboard in Resources */,
 				EB039C132A696BCA006DEFC5 /* Assets.xcassets in Resources */,
 				EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */,
+				EB5883262A6B98DE003847A4 /* MissionDetailsTableViewCell.xib in Resources */,
 				EB039C112A696BCA006DEFC5 /* Main.storyboard in Resources */,
-				EB8748822A6B0852003B9C4B /* MissionDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,10 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5883252A6B98DE003847A4 /* MissionDetailsTableViewCell.swift in Sources */,
 				EB2803342A6A621C003A8C8D /* RepositoryError.swift in Sources */,
 				EB2803032A699390003A8C8D /* ArrayExtension.swift in Sources */,
 				EB2802E82A6975F3003A8C8D /* WebService.swift in Sources */,
 				EB039C0E2A696BCA006DEFC5 /* MissionListViewController.swift in Sources */,
+				EB58831E2A6B974F003847A4 /* MissionDetailsViewController.swift in Sources */,
 				EB2802EA2A69760A003A8C8D /* LuanchAPIQuery.swift in Sources */,
 				EB2803302A6A61A3003A8C8D /* WebImageRepositroy.swift in Sources */,
 				EB2802E22A6975CF003A8C8D /* RequestQueryParamManager.swift in Sources */,
@@ -436,10 +438,8 @@
 				EB7346822A696EE7007B3CD4 /* MainCoordinator.swift in Sources */,
 				EB2802F12A697938003A8C8D /* MissionRepository.swift in Sources */,
 				EB2802E62A6975E8003A8C8D /* RequestBodyManager.swift in Sources */,
-				EB8748812A6B0852003B9C4B /* MissionDetailTableViewCell.swift in Sources */,
 				EB039C0A2A696BCA006DEFC5 /* AppDelegate.swift in Sources */,
 				EB2802EF2A6976D0003A8C8D /* Log.swift in Sources */,
-				EB8748772A6AC766003B9C4B /* MissionDetailViewController.swift in Sources */,
 				EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */,
 				EB8748792A6AD14E003B9C4B /* MissionDetailsViewModel.swift in Sources */,
 				EB7346862A696F3A007B3CD4 /* TypeAliases.swift in Sources */,
