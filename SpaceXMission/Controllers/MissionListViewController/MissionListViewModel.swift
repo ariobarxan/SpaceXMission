@@ -6,10 +6,11 @@
 //
 
 import Foundation
-
+// TODO: - Renamed After process is done
 final class MissionListViewModel {
     
-    var missions: [Mission] = [] {
+    var remainedMissionInCurrentPage: [Mission] = []
+    var displayMissions: [Mission] = [] {
         didSet {
             reloadTableView()
         }
@@ -54,10 +55,36 @@ extension MissionListViewModel {
         page += 1
         do {
             let newMissions = try await repository.fetchNewMissions(forPage: page, withLimit: limit)
-            missions.appendIfNotDuplicated(contentsOf: newMissions)
+            remainedMissionInCurrentPage.appendIfNotDuplicated(contentsOf: newMissions)
+            await loadData()
         } catch {
             showError("error_fetching_new_missions" .localized())
         }
     }
     
 }
+
+// MARK: - Action Functions
+extension MissionListViewModel {
+    
+    func loadData() async {
+        if remainedMissionInCurrentPage.count == 0 {
+            await fetchNewMissions()
+        } else {
+            var newLoad: [Mission] = []
+            for i in 0...19 {
+                if i < remainedMissionInCurrentPage.count {
+                    newLoad.append(remainedMissionInCurrentPage[i])
+                    remainedMissionInCurrentPage.remove(at: i)
+                } else {
+                    break
+                }
+            }
+            if newLoad.count != 0 {
+                displayMissions.appendIfNotDuplicated(contentsOf: newLoad)
+            }
+        }
+        
+    }
+}
+

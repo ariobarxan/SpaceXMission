@@ -28,7 +28,6 @@ extension Date {
             dateFormatter.dateFormat = wantedDateFormate.rawValue
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let formattedDate = dateFormatter.string(from: date)
-            print(formattedDate)
             return formattedDate
         } else {
             return nil

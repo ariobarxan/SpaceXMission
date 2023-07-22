@@ -10,3 +10,4 @@
 "mission_date" = "Mission Date: ";
 "mission_status" = "Mission Status: ";
 "no_date_error" = "There is no date recorded for this mission";
+"no_mission_detail_error" = "We do not have any information available regarding this mission at this time.";

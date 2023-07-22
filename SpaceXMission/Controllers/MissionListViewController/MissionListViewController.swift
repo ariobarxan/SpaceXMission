@@ -83,18 +83,26 @@ extension MissionListViewController {
 extension MissionListViewController: TableViewDataSourceAndDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.missions.count
+        viewModel.displayMissions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MissionTableViewCell.identifier, for: indexPath) as! MissionTableViewCell
-        cell.setup(withMission: viewModel.missions[indexPath.row])
+        cell.setup(withMission: viewModel.displayMissions[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mission = viewModel.missions[indexPath.row]
+        let mission = viewModel.displayMissions[indexPath.row]
         (coordinator as! MainCoordinator).showMissionDetailViewController(forMission: mission)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        Task{
+            if indexPath.row == viewModel.displayMissions.count - 1 {
+                await viewModel.loadData()
+            }
+        }
     }
     
 }

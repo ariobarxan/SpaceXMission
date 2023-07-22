@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,9 +33,9 @@
                             <constraint firstAttribute="width" constant="35" id="iAx-lc-7Jx"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT1-fJ-Xvx" userLabel="Description">
-                        <rect key="frame" x="16" y="44" width="288" height="168"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT1-fJ-Xvx" userLabel="Description">
+                        <rect key="frame" x="16" y="52" width="288" height="152"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -43,7 +44,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="epx-2S-oa8"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -52,7 +53,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="lMR-my-Nlk"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -68,11 +69,11 @@
                     <constraint firstItem="od4-jg-rD8" firstAttribute="trailing" secondItem="JNo-S3-9gG" secondAttribute="trailing" id="PEH-fs-GYQ"/>
                     <constraint firstItem="mru-WA-POt" firstAttribute="leading" secondItem="VcQ-l8-Pp6" secondAttribute="leading" id="UkD-ns-NAh"/>
                     <constraint firstItem="JNo-S3-9gG" firstAttribute="leading" secondItem="VcQ-l8-Pp6" secondAttribute="trailing" constant="8" id="Xfa-uv-0DE"/>
-                    <constraint firstItem="od4-jg-rD8" firstAttribute="top" secondItem="mT1-fJ-Xvx" secondAttribute="bottom" constant="8" id="fRT-Lw-p8l"/>
+                    <constraint firstItem="od4-jg-rD8" firstAttribute="top" secondItem="mT1-fJ-Xvx" secondAttribute="bottom" constant="16" id="fRT-Lw-p8l"/>
                     <constraint firstItem="JNo-S3-9gG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gbR-gO-Zob"/>
                     <constraint firstAttribute="bottom" secondItem="mru-WA-POt" secondAttribute="bottom" constant="8" id="hR7-Ff-rwN"/>
                     <constraint firstAttribute="trailing" secondItem="JNo-S3-9gG" secondAttribute="trailing" constant="16" id="uJc-NW-RxV"/>
-                    <constraint firstItem="mT1-fJ-Xvx" firstAttribute="top" secondItem="VcQ-l8-Pp6" secondAttribute="bottom" constant="8" id="yOt-kj-Er1"/>
+                    <constraint firstItem="mT1-fJ-Xvx" firstAttribute="top" secondItem="VcQ-l8-Pp6" secondAttribute="bottom" constant="16" id="yOt-kj-Er1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

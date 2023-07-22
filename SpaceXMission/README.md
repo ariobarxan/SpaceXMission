@@ -13,3 +13,4 @@
 - [ ] Making Network layer a target 
 - [ ] Implement saving to file manager as a cache for images
 - [ ] CollectionView for showing missions images
+- [ ] Refresh ability and check if pagination is working correctly as it must

@@ -52,7 +52,7 @@ extension MissionTableViewCell {
     }
     
     private func setupDescriptionLabel(){
-        descriptionLabel.text = mission.details ?? ""
+        descriptionLabel.text = mission.details ?? "no_mission_detail_error".localized()
     }
     
     private func setupDateLabel() {

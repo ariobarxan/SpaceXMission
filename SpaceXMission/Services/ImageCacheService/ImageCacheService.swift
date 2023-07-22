@@ -21,12 +21,10 @@ final class ImageCacheService: ImageCacheServiceProtocol {
 
     func fetchImage(withKey key: String) -> UIImage? {
         let image = cache.object(forKey: key as NSString)
-        print("from cache")
         return image
     }
     
     func saveImage(_ image: UIImage, withKey key: String) {
-        print("save to cache")
         cache.setObject(image, forKey: key as NSString)
     }
 }
