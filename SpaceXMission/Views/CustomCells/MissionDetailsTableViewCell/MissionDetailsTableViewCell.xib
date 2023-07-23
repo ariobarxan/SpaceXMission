@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ewq-bS-fNe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
+                        <rect key="frame" x="0.0" y="8" width="320" height="198"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-V3-8r3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
@@ -41,7 +42,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uE-k4-OFr">
-                                <rect key="frame" x="0.0" y="21" width="320" height="193"/>
+                                <rect key="frame" x="0.0" y="21" width="320" height="177"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,8 +51,8 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ewq-bS-fNe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7tH-mL-uax"/>
-                    <constraint firstAttribute="bottom" secondItem="Ewq-bS-fNe" secondAttribute="bottom" id="9gG-ef-rph"/>
+                    <constraint firstItem="Ewq-bS-fNe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7tH-mL-uax"/>
+                    <constraint firstAttribute="bottom" secondItem="Ewq-bS-fNe" secondAttribute="bottom" constant="8" id="9gG-ef-rph"/>
                     <constraint firstAttribute="trailing" secondItem="Ewq-bS-fNe" secondAttribute="trailing" id="dO5-re-0S0"/>
                     <constraint firstItem="Ewq-bS-fNe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kE0-Zv-PG2"/>
                 </constraints>

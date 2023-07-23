@@ -8,10 +8,15 @@
 import UIKit
 
 class MissionDetailsViewController: BaseViewController {
-
+    var b = false
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var missionImageView: WebImageView!
     @IBOutlet weak var missionDetailsTableView: UITableView!
+    
+    @IBOutlet weak var bookMarkButton: UIButton!
+    @IBAction func bookMarkButtonAction(_ sender: UIButton) {
+        viewModel.handleBookMarking()
+    }
     
     private var viewModel: MissionDetailsViewModel!
 
@@ -28,6 +33,7 @@ extension MissionDetailsViewController {
     func setupViews() {
         setupMissionImageView()
         setupTableView()
+        setupBookMarkButton()
     }
     
     
@@ -41,14 +47,25 @@ extension MissionDetailsViewController {
         missionDetailsTableView.dataSource = self
         // TODO: - Set the right amount for the Insets
     }
+    
+    private func setupBookMarkButton() {
+        let imageName = self.viewModel.isBookMarked ? "bookmark.fill" : "bookmark"
+        let image = UIImage(systemName: imageName)
+        self.bookMarkButton.setImage(image, for: .normal)
+    }
 }
 
+// MARK: - Action Functions
 extension MissionDetailsViewController {
     
     func setup(forMission mission: Mission) {
-        viewModel = MissionDetailsViewModel(mission: mission) { [unowned self] in
+        viewModel = MissionDetailsViewModel(mission: mission, reloadTableView: { [unowned self] in
             self.reloadTableView()
-        }
+        }, showError: { [unowned self] message in
+            self.showError(message)
+        }, updateBookMarkButton: { [unowned self] in
+            self.setupBookMarkButton()
+        })
     }
     
     private func reloadTableView() {
@@ -56,6 +73,8 @@ extension MissionDetailsViewController {
             self.missionDetailsTableView.reloadData()
         }
     }
+    
+    private func showError(_ message: String) {}
 }
 
 // MARK: - TableView Delegate and DataSource Functions

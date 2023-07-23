@@ -13,6 +13,8 @@
 		EB039C112A696BCA006DEFC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB039C0F2A696BCA006DEFC5 /* Main.storyboard */; };
 		EB039C132A696BCA006DEFC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB039C122A696BCA006DEFC5 /* Assets.xcassets */; };
 		EB039C162A696BCA006DEFC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB039C142A696BCA006DEFC5 /* LaunchScreen.storyboard */; };
+		EB207CAE2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */; };
+		EB207CB12A6D9C510086784B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB207CB02A6D9C510086784B /* CoreDataService.swift */; };
 		EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802DB2A6975A7003A8C8D /* RequestManager.swift */; };
 		EB2802DE2A6975B6003A8C8D /* RequestMethodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802DD2A6975B6003A8C8D /* RequestMethodManager.swift */; };
 		EB2802E02A6975C1003A8C8D /* RequestURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802DF2A6975C1003A8C8D /* RequestURLManager.swift */; };
@@ -60,6 +62,8 @@
 		EB039C122A696BCA006DEFC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB039C152A696BCA006DEFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB039C172A696BCA006DEFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB207CAD2A6D9A3D0086784B /* SpaceXMission.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXMission.xcdatamodel; sourceTree = "<group>"; };
+		EB207CB02A6D9C510086784B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		EB2802DB2A6975A7003A8C8D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		EB2802DD2A6975B6003A8C8D /* RequestMethodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethodManager.swift; sourceTree = "<group>"; };
 		EB2802DF2A6975C1003A8C8D /* RequestURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestURLManager.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				EB039C172A696BCA006DEFC5 /* Info.plist */,
 				EB039C122A696BCA006DEFC5 /* Assets.xcassets */,
 				EB2803002A698E30003A8C8D /* Localizable.strings */,
+				EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 		EB039C212A696C08006DEFC5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EB207CAF2A6D9B990086784B /* CoreDataService */,
 				EB67CB922A6A7EA40050F37D /* ImageCacheService */,
 				EB2802DA2A69758C003A8C8D /* NetworkService */,
 			);
@@ -245,6 +251,14 @@
 				EB5883202A6B9837003847A4 /* MissionDetailsTableViewCell */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		EB207CAF2A6D9B990086784B /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				EB207CB02A6D9C510086784B /* CoreDataService.swift */,
+			);
+			path = CoreDataService;
 			sourceTree = "<group>";
 		};
 		EB2802D92A697565003A8C8D /* APIModels */ = {
@@ -448,6 +462,7 @@
 				EB8748792A6AD14E003B9C4B /* MissionDetailsViewModel.swift in Sources */,
 				EB7346862A696F3A007B3CD4 /* TypeAliases.swift in Sources */,
 				EB73468C2A6972AE007B3CD4 /* MissionTableViewCell.swift in Sources */,
+				EB207CAE2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld in Sources */,
 				EB2803362A6A622E003A8C8D /* NetworkError.swift in Sources */,
 				EB2802F42A697B0E003A8C8D /* MissionListViewModel.swift in Sources */,
 				EB7346802A696EDD007B3CD4 /* Coordinator.swift in Sources */,
@@ -458,6 +473,7 @@
 				EB2803382A6A63C5003A8C8D /* WebImageViewModel.swift in Sources */,
 				EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */,
 				EB67CB942A6A7EBF0050F37D /* ImageCacheService.swift in Sources */,
+				EB207CB12A6D9C510086784B /* CoreDataService.swift in Sources */,
 				EB2802E02A6975C1003A8C8D /* RequestURLManager.swift in Sources */,
 				EB2802FB2A698DF6003A8C8D /* StringExtension.swift in Sources */,
 				EB039C0C2A696BCA006DEFC5 /* SceneDelegate.swift in Sources */,
@@ -688,6 +704,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB207CAD2A6D9A3D0086784B /* SpaceXMission.xcdatamodel */,
+			);
+			currentVersion = EB207CAD2A6D9A3D0086784B /* SpaceXMission.xcdatamodel */;
+			path = SpaceXMission.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EB039BFE2A696BCA006DEFC5 /* Project object */;
 }

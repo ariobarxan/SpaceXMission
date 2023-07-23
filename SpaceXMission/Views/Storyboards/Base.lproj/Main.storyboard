@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -74,23 +75,38 @@
                                 <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vQ-YY-t26">
+                                <rect key="frame" x="16" y="181" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="ZUu-Vc-NR6"/>
+                                    <constraint firstAttribute="height" constant="35" id="cLU-fe-ApM"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="bookmark" catalog="system"/>
+                                <connections>
+                                    <action selector="bookMarkButtonAction:" destination="Uwq-M2-BcZ" eventType="touchUpInside" id="jtl-UB-IRO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IFx-j1-Rfi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="muA-Jn-kzo" firstAttribute="top" secondItem="zd7-f0-AcP" secondAttribute="bottom" id="1Je-Gc-chJ"/>
+                            <constraint firstItem="0vQ-YY-t26" firstAttribute="leading" secondItem="IFx-j1-Rfi" secondAttribute="leading" constant="16" id="AOt-EK-3hx"/>
                             <constraint firstItem="IFx-j1-Rfi" firstAttribute="bottom" secondItem="muA-Jn-kzo" secondAttribute="bottom" id="Bbr-f7-1z5"/>
                             <constraint firstItem="IFx-j1-Rfi" firstAttribute="trailing" secondItem="lu4-E9-vIh" secondAttribute="trailing" id="DMu-U7-GkM"/>
                             <constraint firstItem="zd7-f0-AcP" firstAttribute="top" secondItem="lu4-E9-vIh" secondAttribute="bottom" id="J6n-0z-oMq"/>
                             <constraint firstItem="IFx-j1-Rfi" firstAttribute="trailing" secondItem="zd7-f0-AcP" secondAttribute="trailing" id="LFC-rI-JsJ"/>
                             <constraint firstItem="lu4-E9-vIh" firstAttribute="leading" secondItem="IFx-j1-Rfi" secondAttribute="leading" id="NlW-ob-YF1"/>
+                            <constraint firstItem="muA-Jn-kzo" firstAttribute="top" secondItem="0vQ-YY-t26" secondAttribute="bottom" constant="-16" id="O21-CL-moV"/>
                             <constraint firstItem="zd7-f0-AcP" firstAttribute="leading" secondItem="IFx-j1-Rfi" secondAttribute="leading" id="UK7-yw-h6J"/>
-                            <constraint firstItem="muA-Jn-kzo" firstAttribute="top" secondItem="zd7-f0-AcP" secondAttribute="bottom" id="ZW1-RS-HtY"/>
                             <constraint firstItem="IFx-j1-Rfi" firstAttribute="trailing" secondItem="muA-Jn-kzo" secondAttribute="trailing" id="vSm-K2-iCh"/>
                             <constraint firstItem="muA-Jn-kzo" firstAttribute="leading" secondItem="IFx-j1-Rfi" secondAttribute="leading" id="w2e-i9-QW5"/>
                             <constraint firstItem="lu4-E9-vIh" firstAttribute="top" secondItem="vky-rI-JB7" secondAttribute="top" id="y2P-LQ-gSo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookMarkButton" destination="0vQ-YY-t26" id="mwr-bS-XgL"/>
                         <outlet property="headerView" destination="lu4-E9-vIh" id="ela-yM-jYl"/>
                         <outlet property="missionDetailsTableView" destination="muA-Jn-kzo" id="IZ4-gx-2pZ"/>
                         <outlet property="missionImageView" destination="zd7-f0-AcP" id="6ui-4n-VpY"/>
@@ -98,10 +114,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcv-MY-KkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775" y="16"/>
+            <point key="canvasLocation" x="773.60000000000002" y="15.742128935532236"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bookmark" catalog="system" width="110" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
