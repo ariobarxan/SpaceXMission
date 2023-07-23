@@ -38,7 +38,7 @@ extension MissionDetailsViewController {
     
     
     private func setupMissionImageView() {
-        missionImageView.setup(withURLString: "https://images2.imgbox.com/33/2e/k6VE4iYl_o.png", name: "https://images2.imgbox.com/33/2e/k6VE4iYl_o.png")
+        missionImageView.setup(withURLString: viewModel.imageURL, name: viewModel.imageURL)
     }
     
     private func setupTableView() {

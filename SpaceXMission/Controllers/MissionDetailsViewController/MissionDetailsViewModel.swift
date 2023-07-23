@@ -17,6 +17,7 @@ final class MissionDetailsViewModel {
     var isBookMarked = false
     var showError: StringClosure
     var updateBookMarkButton: VoidClosure
+    var imageURL = ""
     
     init(mission: Mission, missionRepository: MissionRepositoryProtocol = MissionRepository(), reloadTableView: @escaping VoidClosure, showError: @escaping StringClosure, updateBookMarkButton: @escaping VoidClosure) {
         self.mission = mission
@@ -78,6 +79,16 @@ extension MissionDetailsViewModel {
             isBookMarked = try missionRepository.isMissionBookMarked(withID: missionID)
         } catch {
             showError("Message")
+        }
+    }
+    
+    private func setImageURL() {
+        if let imageURL = mission.links?.flickr?.original?.first  {
+            self.imageURL = imageURL
+        } else if let imageURL = mission.links?.patch?.large {
+            self.imageURL = imageURL
+        } else {
+            // show placeholder
         }
     }
     
