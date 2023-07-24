@@ -96,7 +96,7 @@ extension MissionDetailsViewModel {
         isBookMarked.toggle()
         guard let missionID = mission.id else {return}
         do {
-            try missionRepository.bookMarkMission(withID: missionID, isBookMarked: isBookMarked)
+            try missionRepository.bookMarkMission(withID: missionID)
             updateBookMarkButton()
         } catch {
             showError("Message")

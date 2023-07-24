@@ -11,7 +11,7 @@ import CoreData
 protocol MissionRepositoryProtocol {
     func fetchNewMissions(forPage page: Int, withLimit limit: Int) async throws -> [Mission]
     func isMissionBookMarked(withID id: String) throws -> Bool
-    func bookMarkMission(withID id: String, isBookMarked: Bool) throws
+    func bookMarkMission(withID id: String) throws
 }
 
 final class MissionRepository: MissionRepositoryProtocol {
@@ -41,18 +41,19 @@ final class MissionRepository: MissionRepositoryProtocol {
         return isBookMarked
     }
     
-    func bookMarkMission(withID id: String, isBookMarked: Bool) throws {
+    func bookMarkMission(withID id: String) throws {
         let predicate = NSPredicate(format: "id == %@", id)
         let request = SpaceXMission.fetchRequest() as NSFetchRequest<SpaceXMission>
         request.predicate = predicate
         
-        if let mission = try coreDataContext.fetch(request).first {
-            coreDataContext.delete(mission)
+        if let oldMission = try coreDataContext.fetch(request).first {
+            coreDataContext.delete(oldMission)
         } else {
-            let mission = SpaceXMission(context: coreDataContext)
-            mission.id = id
+            let newMission = SpaceXMission(context: coreDataContext)
+            newMission.id = id
         }
         try coreDataContext.save()
+
     }
     
 }

@@ -8,11 +8,10 @@
 import UIKit
 
 class MissionDetailsViewController: BaseViewController {
-    var b = false
+
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var missionImageView: WebImageView!
     @IBOutlet weak var missionDetailsTableView: UITableView!
-    
     @IBOutlet weak var bookMarkButton: UIButton!
     @IBAction func bookMarkButtonAction(_ sender: UIButton) {
         viewModel.handleBookMarking()
