@@ -18,13 +18,11 @@ final class MissionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }
 
 extension MissionTableViewCell {
@@ -35,6 +33,7 @@ extension MissionTableViewCell {
     }
     
     private func setupViews() {
+        self.selectionStyle = .none
         setupFlightNumberLabel()
         setupMissionIconImageView()
         setupDescriptionLabel()

@@ -35,9 +35,9 @@ extension MissionDetailsViewController {
         setupBookMarkButton()
     }
     
-    
     private func setupMissionImageView() {
         missionImageView.setup(withURLString: viewModel.imageURL, name: viewModel.imageURL)
+        print("Amir image")
     }
     
     private func setupTableView() {
@@ -73,6 +73,7 @@ extension MissionDetailsViewController {
             self.missionDetailsTableView.reloadData()
         }
     }
+    
     
     private func showError(_ message: String) {}
 }

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MissionDetailsTableViewCell: UITableViewCell {
+final class MissionDetailsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet private(set) weak var titleLabel: UILabel!
+    @IBOutlet private(set) weak var descriptionLabel: UILabel!
+    @IBOutlet private(set) weak var detailLabel: UILabel!
     
     private var config: MissionDetailsTableViewCell.Config!
     
@@ -22,10 +22,6 @@ class MissionDetailsTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-    }
-    
-    deinit {
-        Log.d()
     }
 }
 
@@ -46,7 +42,6 @@ extension MissionDetailsTableViewCell {
         self.config = config
         setupViews()
     }
-    
     
     private func setupViews() {
         self.selectionStyle = .none

@@ -3,4 +3,54 @@
    uuid = "98A3F1C5-6891-4F6F-B9A0-6A0B9AC2BBDD"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "216BA743-2641-452A-9E41-52BC2E4AA3B2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpaceXMission/Controllers/MissionDetailsViewController/MissionDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "setImageURL()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "216BA743-2641-452A-9E41-52BC2E4AA3B2 - 45ff8e3b74b5d8e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceXMission.MissionDetailsViewModel.setImageURL() -&gt; ()"
+                  moduleName = "SpaceXMission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebcom/Work/Code/LevelUp/SpaceXMission/SpaceXMission/Controllers/MissionDetailsViewController/MissionDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "828">
+               </Location>
+               <Location
+                  uuid = "216BA743-2641-452A-9E41-52BC2E4AA3B2 - 45ff8e3b74b5d8e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpaceXMission.MissionDetailsViewModel.setImageURL() -&gt; ()"
+                  moduleName = "SpaceXMission"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebcom/Work/Code/LevelUp/SpaceXMission/SpaceXMission/Controllers/MissionDetailsViewController/MissionDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "840">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
