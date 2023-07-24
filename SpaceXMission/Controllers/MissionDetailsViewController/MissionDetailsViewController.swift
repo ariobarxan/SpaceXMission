@@ -70,6 +70,7 @@ extension MissionDetailsViewController {
     
     private func reloadTableView() {
         mainThread {
+            //it crashes some times at this line
             self.missionDetailsTableView.reloadData()
         }
     }
@@ -85,17 +86,37 @@ extension MissionDetailsViewController: TableViewDataSourceAndDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let detail = viewModel.detailsData[indexPath.row]
-        let title = detail.title
-        let description = detail.description
-        let shouldBeFormattedVertically = detail.isVerticallyFormatted
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: MissionDetailsTableViewCell.identifier, for: indexPath) as! MissionDetailsTableViewCell
-        
-        let config = shouldBeFormattedVertically ? MissionDetailsTableViewCell.Config.titleWithDetailedDescription(titleText: title, detailedDescriptionText: description) : MissionDetailsTableViewCell.Config.titleWithDescription(titleText: title, descriptionText: description)
-        
-        cell.setup(withConfig: config)
+    
+        cell.setup(withConfig: getCellConfig())
         return cell
+        
+        func getCellConfig() -> MissionDetailsTableViewCell.Config {
+            typealias Config = MissionDetailsTableViewCell.Config
+            let detail = viewModel.detailsData[indexPath.row]
+            let key = detail.key
+            let value = detail.value
+            let shouldBeFormattedVertically = detail.isVerticallyFormatted
+            let valueIsLink = detail.valueContainsLink
+
+            var config: Config
+            
+            if valueIsLink {
+                config = Config.singleLink(linkText: key)
+            } else {
+                config = shouldBeFormattedVertically ? MissionDetailsTableViewCell.Config.titleWithDetailedDescription(titleText: key, detailedDescriptionText: value) : MissionDetailsTableViewCell.Config.titleWithDescription(titleText: key, descriptionText: value)
+            }
+        
+            return config
+        }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detail = viewModel.detailsData[indexPath.row]
+        if detail.valueContainsLink, let url = URL(string: detail.value), UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:])
+        }
+    }
+    
     
 }

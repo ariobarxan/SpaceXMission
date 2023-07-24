@@ -12,7 +12,7 @@ final class MissionDetailsViewModel {
     var missionRepository: MissionRepositoryProtocol
     var mission: Mission
     var reloadTableView: VoidClosure
-    var detailsData: [(title: String, description: String, isVerticallyFormatted: Bool)] = []
+    var detailsData: [(key: String, value: String, isVerticallyFormatted: Bool, valueContainsLink: Bool)] = []
     var missionImageUrlString: String!
     var isBookMarked = false
     var showError: StringClosure
@@ -37,13 +37,13 @@ extension MissionDetailsViewModel {
     private func fillDetailsData() {
         if let missionName = mission.name {
             let missionNameTitle =  "Mission Name"
-            let missionNameTuple = (missionNameTitle, missionName, false)
+            let missionNameTuple = (missionNameTitle, missionName, false, false)
             detailsData.append(missionNameTuple)
         }
 
         let detailsTitle = "Details of the mission"
         let details = mission.details ?? "Unfortunately there are no details about this mission!"
-        let detailsTuple = (detailsTitle, details, true)
+        let detailsTuple = (detailsTitle, details, true, false)
         detailsData.append(detailsTuple)
         
         let missionDateTitle = "Execution Date"
@@ -53,12 +53,12 @@ extension MissionDetailsViewModel {
         } else {
             missionDate = "no_date_error".localized()
         }
-        let missionDateTuple = (missionDateTitle, missionDate, false)
+        let missionDateTuple = (missionDateTitle, missionDate, false, false)
         detailsData.append(missionDateTuple)
         
         if let wikipediaLink = mission.links?.wikipedia {
             let wikipediaLinkTitle = "Wikipedia Link"
-            let wikipediaLinkTuple = (wikipediaLinkTitle, wikipediaLink,true)
+            let wikipediaLinkTuple = (wikipediaLinkTitle, wikipediaLink,false, true)
             detailsData.append(wikipediaLinkTuple)
         }
         

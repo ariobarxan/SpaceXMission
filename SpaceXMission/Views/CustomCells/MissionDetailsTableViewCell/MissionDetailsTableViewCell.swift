@@ -33,6 +33,7 @@ class MissionDetailsTableViewCell: UITableViewCell {
 extension MissionDetailsTableViewCell {
     
     enum Config {
+        case singleLink(linkText: String)
         case titleWithDescription(titleText: String, descriptionText: String)
         case titleWithDetailedDescription(titleText: String, detailedDescriptionText: String)
     }
@@ -48,24 +49,33 @@ extension MissionDetailsTableViewCell {
     
     
     private func setupViews() {
-        
+        self.selectionStyle = .none
         switch config {
         case .titleWithDescription(let titleText, let descriptionText):
-            titleLabel.text = titleText
+            titleLabel.isHidden = false
             descriptionLabel.isHidden = false
-            descriptionLabel.text = descriptionText
             detailLabel.isHidden = true
+            titleLabel.text = titleText
+            titleLabel.textColor = .black
+            descriptionLabel.text = descriptionText
             detailLabel.text = titleText
             break
         case .titleWithDetailedDescription(let titleText, let detailedDescriptionText):
-            titleLabel.text = titleText
+            titleLabel.isHidden = false
             detailLabel.isHidden = false
-            detailLabel.text = detailedDescriptionText
             descriptionLabel.isHidden = true
-
+            titleLabel.text = titleText
+            titleLabel.textColor = .black
+            detailLabel.text = detailedDescriptionText
             break
+        case .singleLink(let linkText):
+            titleLabel.isHidden = false
+            detailLabel.isHidden = true
+            descriptionLabel.isHidden = true
+            titleLabel.text = linkText
+            titleLabel.textColor = .blue
+
         default:
-            // TODO: - Handle
             break
         }
     }

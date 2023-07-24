@@ -97,11 +97,9 @@ extension MissionListViewController: TableViewDataSourceAndDelegate {
         (coordinator as! MainCoordinator).showMissionDetailViewController(forMission: mission)
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        Task{
-            if indexPath.row == viewModel.displayMissions.count - 1 {
-                await viewModel.loadData()
-            }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        Task {
+            await viewModel.loadData()
         }
     }
     
