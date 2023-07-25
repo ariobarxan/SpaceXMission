@@ -16,20 +16,18 @@ final class MissionDetailsViewModel {
     private var missionImageUrlString: String?
     private var missionRepository: MissionRepositoryProtocol
     private var mission: Mission
-    private var reloadTableView: VoidClosure
     private var showError: StringClosure
     private var updateBookMarkButton: VoidClosure
     
-    init(mission: Mission, missionRepository: MissionRepositoryProtocol = MissionRepository(), reloadTableView: @escaping VoidClosure, showError: @escaping StringClosure, updateBookMarkButton: @escaping VoidClosure) {
+    init(mission: Mission, missionRepository: MissionRepositoryProtocol = MissionRepository(), showError: @escaping StringClosure, updateBookMarkButton: @escaping VoidClosure) {
         self.mission = mission
         self.missionRepository = missionRepository
-        self.reloadTableView = reloadTableView
         self.showError = showError
         self.updateBookMarkButton = updateBookMarkButton
         fillMissionImageUrlString()
-        setDetailsData()
         setIsBookMarked()
         setImageURL()
+        setDetailsData()
     }
 }
 
@@ -63,8 +61,6 @@ extension MissionDetailsViewModel {
             let wikipediaLinkTuple = (wikipediaLinkTitle, wikipediaLink,false, true)
             detailsData.append(wikipediaLinkTuple)
         }
-        
-        reloadTableView()
     }
     
     private func fillMissionImageUrlString() {

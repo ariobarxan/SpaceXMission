@@ -56,19 +56,11 @@ extension MissionDetailsViewController {
 extension MissionDetailsViewController {
     
     func setup(forMission mission: Mission) {
-        viewModel = MissionDetailsViewModel(mission: mission, reloadTableView: { [unowned self] in
-            self.reloadTableView()
-        }, showError: { [unowned self] message in
+        viewModel = MissionDetailsViewModel(mission: mission, showError: { [unowned self] message in
             self.showError(message)
         }, updateBookMarkButton: { [unowned self] in
             self.setupBookMarkButton()
         })
-    }
-    
-    private func reloadTableView() {
-        mainThread {
-            self.missionDetailsTableView.reloadData()
-        }
     }
     
     private func showError(_ message: String) {
