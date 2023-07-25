@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WebService {
+final class WebService {
     
     static let shared = WebService()
     
@@ -29,6 +29,7 @@ class WebService {
     }
     
     private func baseRequestGetData(_ requestManager :RequestManager ) async throws -> Data {
+        // TODO: - Enahnce logs
         guard let request = try? requestManager.asURLRequest() else {
             throw NetworkError.urlStringISInvalid
         }

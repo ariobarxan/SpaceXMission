@@ -20,7 +20,7 @@ final class RequestURLManager {
     func getURL(for request : RequestManager) -> URL? {
         switch request {
         case .latestMission:
-            return URL(string: "https://api.spacexdata.com/v5/launches/latest")
+            return URL(string: baseURL + "latest")
         case .launchesWithQuery:
             return URL(string: baseURL + "query")
         case .image(let urlString):

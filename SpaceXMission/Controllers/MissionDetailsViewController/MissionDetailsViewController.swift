@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MissionDetailsViewController: BaseViewController {
+final class MissionDetailsViewController: BaseViewController {
 
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var missionImageView: WebImageView!
-    @IBOutlet weak var missionDetailsTableView: UITableView!
-    @IBOutlet weak var bookMarkButton: UIButton!
+    @IBOutlet private(set) weak var headerView: UIView!
+    @IBOutlet private(set) weak var missionImageView: WebImageView!
+    @IBOutlet private(set) weak var missionDetailsTableView: UITableView!
+    @IBOutlet private(set) weak var bookMarkButton: UIButton!
     @IBAction func bookMarkButtonAction(_ sender: UIButton) {
         viewModel.handleBookMarking()
     }
@@ -29,7 +29,7 @@ class MissionDetailsViewController: BaseViewController {
 // MARK: - Setup Functions
 extension MissionDetailsViewController {
     
-    func setupViews() {
+    private func setupViews() {
         setupMissionImageView()
         setupTableView()
         setupBookMarkButton()
@@ -43,11 +43,10 @@ extension MissionDetailsViewController {
         MissionDetailsTableViewCell.register(for: missionDetailsTableView)
         missionDetailsTableView.delegate = self
         missionDetailsTableView.dataSource = self
-        // TODO: - Set the right amount for the Insets
     }
     
     private func setupBookMarkButton() {
-        let imageName = self.viewModel.isBookMarked ? "bookmark.fill" : "bookmark"
+        let imageName = self.viewModel.isBookMarked ? ImageAssets.bookmarkFilled.rawValue : ImageAssets.bookmark.rawValue
         let image = UIImage(systemName: imageName)
         self.bookMarkButton.setImage(image, for: .normal)
     }
@@ -68,13 +67,19 @@ extension MissionDetailsViewController {
     
     private func reloadTableView() {
         mainThread {
-            //it crashes some times at this line
             self.missionDetailsTableView.reloadData()
         }
     }
     
+    private func showError(_ message: String) {
+        // TODO: - Show Error
+    }
     
-    private func showError(_ message: String) {}
+    private func openLinkInBrowser(_ urlString: String) {
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
 }
 
 // MARK: - TableView Delegate and DataSource Functions
@@ -87,33 +92,16 @@ extension MissionDetailsViewController: TableViewDataSourceAndDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MissionDetailsTableViewCell.identifier, for: indexPath) as! MissionDetailsTableViewCell
     
-        cell.setup(withConfig: getCellConfig())
+        cell.setup(withConfig: viewModel.getCellConfig(forIndex: indexPath.row))
         return cell
         
-        func getCellConfig() -> MissionDetailsTableViewCell.Config {
-            typealias Config = MissionDetailsTableViewCell.Config
-            let detail = viewModel.detailsData[indexPath.row]
-            let key = detail.key
-            let value = detail.value
-            let shouldBeFormattedVertically = detail.isVerticallyFormatted
-            let valueIsLink = detail.valueContainsLink
-
-            var config: Config
-            
-            if valueIsLink {
-                config = Config.singleLink(linkText: key)
-            } else {
-                config = shouldBeFormattedVertically ? MissionDetailsTableViewCell.Config.titleWithDetailedDescription(titleText: key, detailedDescriptionText: value) : MissionDetailsTableViewCell.Config.titleWithDescription(titleText: key, descriptionText: value)
-            }
         
-            return config
-        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detail = viewModel.detailsData[indexPath.row]
-        if detail.valueContainsLink, let url = URL(string: detail.value), UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: [:])
+        if detail.valueContainsLink {
+            openLinkInBrowser(detail.value)
         }
     }
 }

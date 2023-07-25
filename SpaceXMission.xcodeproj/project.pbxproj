@@ -13,6 +13,7 @@
 		EB039C112A696BCA006DEFC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB039C0F2A696BCA006DEFC5 /* Main.storyboard */; };
 		EB039C132A696BCA006DEFC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB039C122A696BCA006DEFC5 /* Assets.xcassets */; };
 		EB039C162A696BCA006DEFC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB039C142A696BCA006DEFC5 /* LaunchScreen.storyboard */; };
+		EB05B4892A702589004F5477 /* AssetEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4882A702589004F5477 /* AssetEnum.swift */; };
 		EB207CAE2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */; };
 		EB207CB12A6D9C510086784B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB207CB02A6D9C510086784B /* CoreDataService.swift */; };
 		EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802DB2A6975A7003A8C8D /* RequestManager.swift */; };
@@ -62,6 +63,7 @@
 		EB039C122A696BCA006DEFC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB039C152A696BCA006DEFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB039C172A696BCA006DEFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB05B4882A702589004F5477 /* AssetEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEnum.swift; sourceTree = "<group>"; };
 		EB207CAD2A6D9A3D0086784B /* SpaceXMission.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXMission.xcdatamodel; sourceTree = "<group>"; };
 		EB207CB02A6D9C510086784B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		EB2802DB2A6975A7003A8C8D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				EB7346852A696F3A007B3CD4 /* TypeAliases.swift */,
 				EB2803042A699638003A8C8D /* Functions.swift */,
+				EB05B4882A702589004F5477 /* AssetEnum.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				EB7346842A696F24007B3CD4 /* BaseViewController.swift in Sources */,
 				EB28032D2A6A615F003A8C8D /* WebImageView.swift in Sources */,
 				EB2803382A6A63C5003A8C8D /* WebImageViewModel.swift in Sources */,
+				EB05B4892A702589004F5477 /* AssetEnum.swift in Sources */,
 				EB7346882A697196007B3CD4 /* UITableViewCellExtension.swift in Sources */,
 				EB67CB942A6A7EBF0050F37D /* ImageCacheService.swift in Sources */,
 				EB207CB12A6D9C510086784B /* CoreDataService.swift in Sources */,

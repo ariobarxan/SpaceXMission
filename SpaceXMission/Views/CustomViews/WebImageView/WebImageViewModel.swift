@@ -10,8 +10,8 @@ import Foundation
 final class WebImageViewModel {
     
     private var urlString: String
-    var repository: WebImageRepositoryProtocol
-    var handleShowLoading: (Bool) -> ()
+    private var repository: WebImageRepositoryProtocol
+    private var handleShowLoading: (Bool) -> ()
     
     init(urlString: String,
          repository: WebImageRepositoryProtocol = WebImageRepository(),

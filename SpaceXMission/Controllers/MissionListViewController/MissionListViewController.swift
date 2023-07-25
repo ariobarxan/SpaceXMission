@@ -9,8 +9,8 @@ import UIKit
 
 final class MissionListViewController: BaseViewController {
 
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var missionListTableView: UITableView!
+    @IBOutlet private(set) weak var headerView: UIView!
+    @IBOutlet private(set )weak var missionListTableView: UITableView!
     
     private var viewModel: MissionListViewModel!
     
@@ -33,7 +33,7 @@ final class MissionListViewController: BaseViewController {
 // MARK: - Setup Functions
 extension MissionListViewController {
     
-    func setupViews() {
+    private func setupViews() {
         setupHeaderView()
         setupTableView()
     }
@@ -46,16 +46,15 @@ extension MissionListViewController {
         MissionTableViewCell.register(for: missionListTableView)
         missionListTableView.delegate = self
         missionListTableView.dataSource = self
-        // TODO: - Set the right amount for the Insets
         missionListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
     }
     
     private func showError(withMessage message: String) {
-        
+        // TODO: - Implement Error Message
     }
     
     private func handleShowLoading(shouldShowLoading: Bool) {
-        
+        // TODO: - Implement Loading
     }
 }
 
@@ -87,22 +86,22 @@ extension MissionListViewController {
 extension MissionListViewController: TableViewDataSourceAndDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.displayMissions.count
+        viewModel.tableViewMissions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MissionTableViewCell.identifier, for: indexPath) as! MissionTableViewCell
-        cell.setup(withMission: viewModel.displayMissions[indexPath.row])
+        cell.setup(withMission: viewModel.tableViewMissions[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mission = viewModel.displayMissions[indexPath.row]
+        let mission = viewModel.tableViewMissions[indexPath.row]
         (coordinator as! MainCoordinator).showMissionDetailViewController(forMission: mission)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.displayMissions.count - 1 {
+        if indexPath.row == viewModel.tableViewMissions.count - 1 {
             Task {
                 await viewModel.loadData()
             }

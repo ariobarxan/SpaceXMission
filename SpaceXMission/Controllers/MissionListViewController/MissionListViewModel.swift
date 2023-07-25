@@ -9,25 +9,25 @@ import Foundation
 // TODO: - Renamed After process is done
 final class MissionListViewModel {
     
-    var remainedMissionInCurrentPage: [Mission] = []
-    var displayMissions: [Mission] = []
-    var repository: MissionRepositoryProtocol
-    var reloadTableView: VoidClosure
-    var showError: (_ message: String) -> ()
-    var handleShowLoading: (Bool) -> ()
     var isLoading = false
+    var tableViewMissions: [Mission] = []
+    private var availableMissions: [Mission] = []
+    private var repository: MissionRepositoryProtocol
+    private var reloadTableView: VoidClosure
+    private var showError: (_ message: String) -> ()
+    private var handleShowLoading: (Bool) -> ()
     private var hasNextPage = true
     private var page: Int = 1
     private var limit: Int = 50
-    private var lastAddedPage = 0
+    private var lastAddedMissionIndex = 0
+    private var numberOfMissionsInTableViewPage = 19
     private var thereAreMissions = true
     private var shouldAllowReloadingTableView = true
     
     init(repository: MissionRepositoryProtocol = MissionRepository(),
          reloadTableView: @escaping VoidClosure,
          showError: @escaping (_ message: String) -> Void,
-         handleShowLoading: @escaping (Bool) -> Void
-    ) {
+         handleShowLoading: @escaping (_ isLoading: Bool) -> Void) {
         self.repository = repository
         self.reloadTableView = reloadTableView
         self.showError = showError
@@ -38,11 +38,10 @@ final class MissionListViewModel {
 //MARK: - Fetching Data
 extension MissionListViewModel {
     
-    func fetchNewMissions() async ->  [Mission]? {
+    private func fetchNewMissions() async ->  [Mission]? {
         if hasNextPage {
             do {
                 let data = try await repository.fetchNewMissions(forPage: page, withLimit: limit)
-                print("for page \(page)")
                 if let missions = data.missions {
                     page += 1
                     hasNextPage = data.hasNextPage
@@ -62,29 +61,37 @@ extension MissionListViewModel {
     func loadData() async {
         guard !isLoading else {return}
         isLoading = true
-        if displayMissions.count == remainedMissionInCurrentPage.count && hasNextPage {
+        if thereAreNotAvailableMissions() {
             let missions = await fetchNewMissions()
             if let missions = missions {
-                remainedMissionInCurrentPage.appendIfNotDuplicated(contentsOf: missions)
+                availableMissions.appendIfNotDuplicated(contentsOf: missions)
             }
         }
         
-        for i in lastAddedPage...(lastAddedPage + 19) {
-            if i < remainedMissionInCurrentPage.count {
-                displayMissions.appendIfNotDuplicated( remainedMissionInCurrentPage[i])
+        for index in lastAddedMissionIndex...(lastAddedMissionIndex + numberOfMissionsInTableViewPage) {
+            if index < availableMissions.count {
+                tableViewMissions.appendIfNotDuplicated( availableMissions[index])
             } else {
                 break
             }
         }
-        lastAddedPage = displayMissions.count - 1
+        lastAddedMissionIndex = tableViewMissions.count - 1
         if shouldAllowReloadingTableView {
             reloadTableView()
         }
         
-        if displayMissions.count == remainedMissionInCurrentPage.count && !hasNextPage {
+        if thereAreNoMoreMissions() {
             shouldAllowReloadingTableView = false
         }
         isLoading = false
+    }
+    
+    private func thereAreNotAvailableMissions() -> Bool {
+        return tableViewMissions.count == availableMissions.count && hasNextPage
+    }
+    
+    private func thereAreNoMoreMissions() -> Bool {
+        return tableViewMissions.count == availableMissions.count && !hasNextPage
     }
 }
 

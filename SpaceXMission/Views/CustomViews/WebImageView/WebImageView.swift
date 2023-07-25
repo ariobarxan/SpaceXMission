@@ -24,10 +24,11 @@ final class WebImageView: UIImageView {
             let data = try await viewModel.getImageData()
             let image = UIImage(data: data)
             self.image = image
-            print("Image downloaded")
+            //Log.d("Image was successfully downloaded")
         } catch {
-            print("Image Error")
-            //TODO: - show placeHolder
+            let image = UIImage(named: ImageAssets.placeHolder.rawValue)
+            self.image = image
+            //Log.d("Image could not be downloaded")
         }
     }
     

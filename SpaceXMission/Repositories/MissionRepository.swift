@@ -15,16 +15,15 @@ protocol MissionRepositoryProtocol {
 }
 
 final class MissionRepository: MissionRepositoryProtocol {
+    
     private var thereAreMissions = true
     private var missionDoc: MissionDoc!
     private var coreDataContext = CoreDataService.shared.persistentContainer.viewContext
     private var hasNextPage: Bool = true
+    
     func fetchNewMissions(forPage page: Int, withLimit limit: Int) async throws -> (missions: [Mission]?, hasNextPage: Bool) {
         if hasNextPage {
-            let apiQuery = APIQuery()
-            let sort = Sort()
-            let options = Options(limit: limit, page: page, sort: sort)
-            let query = LaunchAPIQuery(query: apiQuery, options: options)
+            let query = createAPIQuery(forLimit: limit, andPage: page)
             let missionDoc = try await WebService.shared.fetchLaunchWithQuery(query: query)
             guard let missions = missionDoc.docs, let hasNextPage = missionDoc.hasNextPage else {
                 throw RepositoryError.noData
@@ -35,7 +34,14 @@ final class MissionRepository: MissionRepositoryProtocol {
             return (missions: nil, hasNextPage: false)
         }
     }
-
+    
+    private func createAPIQuery(forLimit limit: Int, andPage page: Int) -> LaunchAPIQuery {
+        let apiQuery = APIQuery()
+        let sort = Sort()
+        let options = Options(limit: limit, page: page, sort: sort)
+        let query = LaunchAPIQuery(query: apiQuery, options: options)
+        return query
+    }
     
     func isMissionBookMarked(withID id: String) throws -> Bool {
         let predicate = NSPredicate(format: "id == %@", id)
@@ -59,7 +65,5 @@ final class MissionRepository: MissionRepositoryProtocol {
             newMission.id = id
         }
         try coreDataContext.save()
-
     }
-    
 }

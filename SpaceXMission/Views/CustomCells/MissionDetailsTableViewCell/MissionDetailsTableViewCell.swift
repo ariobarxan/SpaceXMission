@@ -69,7 +69,6 @@ extension MissionDetailsTableViewCell {
             descriptionLabel.isHidden = true
             titleLabel.text = linkText
             titleLabel.textColor = .blue
-
         default:
             break
         }

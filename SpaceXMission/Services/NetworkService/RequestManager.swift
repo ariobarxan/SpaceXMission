@@ -25,7 +25,7 @@ enum RequestManager {
             parameters.keys.forEach({ key in
                 params.append(URLQueryItem(name: key, value: "\(parameters[key]!)"))
             })
-            // TODO: - Check this
+            // TODO: 
             if !params.isEmpty {
                 // why do we reverse it
                 urlComponents?.queryItems = params.reversed()

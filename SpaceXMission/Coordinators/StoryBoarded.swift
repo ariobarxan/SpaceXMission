@@ -10,7 +10,7 @@ import UIKit
 enum StoryBoardName: String {
     case Main
     
-    var instance: UIStoryboard {
+    fileprivate var instance: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: Bundle.main)
     }
 }

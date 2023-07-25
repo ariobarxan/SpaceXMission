@@ -14,7 +14,7 @@ protocol WebImageRepositoryProtocol {
 final class WebImageRepository: WebImageRepositoryProtocol {
     private var imageData: Data!
     private let imageCacheService = ImageCacheService.shared
-    var image: UIImage? = nil
+    private var image: UIImage? = nil
 
     func fetchImage(withURLString urlString: String) async throws -> Data {
         if let image = imageCacheService.fetchImage(withKey: urlString) {
@@ -24,7 +24,9 @@ final class WebImageRepository: WebImageRepositoryProtocol {
         let imageData = try await WebService.shared.fetchImageData(withURLString: urlString)
         self.imageData = imageData
         image = UIImage(data: imageData)
-        self.imageCacheService.saveImage(image!, withKey: urlString)
+        if let image = image {
+            self.imageCacheService.saveImage(image, withKey: urlString)
+        }
         return imageData
     }
 }
