@@ -52,7 +52,6 @@ struct Mission: Codable, Equatable {
 
 // MARK: - Links
 struct Links: Codable, Equatable {
-    
     let patch: Patch?
     let reddit: Reddit?
     let flickr: Flickr?

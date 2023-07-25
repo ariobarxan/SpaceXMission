@@ -9,27 +9,33 @@ import Foundation
 import CoreData
 
 protocol MissionRepositoryProtocol {
-    func fetchNewMissions(forPage page: Int, withLimit limit: Int) async throws -> [Mission]
+    func fetchNewMissions(forPage page: Int, withLimit limit: Int) async throws -> (missions: [Mission]?, hasNextPage: Bool)
     func isMissionBookMarked(withID id: String) throws -> Bool
     func bookMarkMission(withID id: String) throws
 }
 
 final class MissionRepository: MissionRepositoryProtocol {
-  
+    private var thereAreMissions = true
     private var missionDoc: MissionDoc!
     private var coreDataContext = CoreDataService.shared.persistentContainer.viewContext
-    
-    func fetchNewMissions(forPage page: Int, withLimit limit: Int) async throws -> [Mission]{
-        let apiQuery = APIQuery()
-        let sort = Sort()
-        let options = Options(limit: limit, page: page, sort: sort)
-        let query = LaunchAPIQuery(query: apiQuery, options: options)
-        let missionDoc = try await WebService.shared.fetchLaunchWithQuery(query: query)
-        guard let missions = missionDoc.docs else {
-            throw RepositoryError.noData
+    private var hasNextPage: Bool = true
+    func fetchNewMissions(forPage page: Int, withLimit limit: Int) async throws -> (missions: [Mission]?, hasNextPage: Bool) {
+        if hasNextPage {
+            let apiQuery = APIQuery()
+            let sort = Sort()
+            let options = Options(limit: limit, page: page, sort: sort)
+            let query = LaunchAPIQuery(query: apiQuery, options: options)
+            let missionDoc = try await WebService.shared.fetchLaunchWithQuery(query: query)
+            guard let missions = missionDoc.docs, let hasNextPage = missionDoc.hasNextPage else {
+                throw RepositoryError.noData
+            }
+            self.hasNextPage = hasNextPage
+            return (missions: missions, hasNextPage: hasNextPage)
+        } else {
+            return (missions: nil, hasNextPage: false)
         }
-        return missions
     }
+
     
     func isMissionBookMarked(withID id: String) throws -> Bool {
         let predicate = NSPredicate(format: "id == %@", id)

@@ -19,6 +19,10 @@ final class MissionListViewController: BaseViewController {
            
         setupViewModel()
         setupViews()
+        
+        Task {
+            await viewModel.loadData()
+        }
     }
     
     deinit{
@@ -97,10 +101,11 @@ extension MissionListViewController: TableViewDataSourceAndDelegate {
         (coordinator as! MainCoordinator).showMissionDetailViewController(forMission: mission)
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        Task {
-            await viewModel.loadData()
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.displayMissions.count - 1 {
+            Task {
+                await viewModel.loadData()
+            }
         }
     }
-    
 }

@@ -86,13 +86,10 @@ extension MissionDetailsViewModel {
     private func setImageURL() {
         if let imageURL = mission.links?.flickr?.original?.first  {
             self.imageURL = imageURL
-            print("Amir flicker")
         } else if let imageURL = mission.links?.patch?.large {
             self.imageURL = imageURL
-            print("Amir Patch")
         } else {
             // show placeholder
-            print("Amir place holder")
         }
     }
     

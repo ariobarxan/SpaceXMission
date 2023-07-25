@@ -15,3 +15,4 @@
 - [ ] CollectionView for showing missions images
 - [ ] Refresh ability and check if pagination is working correctly as it must
 - [ ] link
+- [ ] Add Activity indicator for table loading

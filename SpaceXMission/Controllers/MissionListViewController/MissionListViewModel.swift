@@ -10,27 +10,18 @@ import Foundation
 final class MissionListViewModel {
     
     var remainedMissionInCurrentPage: [Mission] = []
-    var displayMissions: [Mission] = [] {
-        didSet {
-            reloadTableView()
-        }
-    }
-    
+    var displayMissions: [Mission] = []
     var repository: MissionRepositoryProtocol
     var reloadTableView: VoidClosure
     var showError: (_ message: String) -> ()
     var handleShowLoading: (Bool) -> ()
-    
-    private var page: Int = 0 {
-        didSet {
-            if page == 1 {
-                limit = 50
-            } else {
-                limit = 20
-            }
-        }
-    }
-    private var limit: Int = 0
+    var isLoading = false
+    private var hasNextPage = true
+    private var page: Int = 1
+    private var limit: Int = 50
+    private var lastAddedPage = 0
+    private var thereAreMissions = true
+    private var shouldAllowReloadingTableView = true
     
     init(repository: MissionRepositoryProtocol = MissionRepository(),
          reloadTableView: @escaping VoidClosure,
@@ -41,50 +32,59 @@ final class MissionListViewModel {
         self.reloadTableView = reloadTableView
         self.showError = showError
         self.handleShowLoading = handleShowLoading
-        
-        Task{
-            await fetchNewMissions()
-        }
     }
 }
 
 //MARK: - Fetching Data
 extension MissionListViewModel {
     
-    func fetchNewMissions() async {
-        page += 1
-        do {
-            let newMissions = try await repository.fetchNewMissions(forPage: page, withLimit: limit)
-            remainedMissionInCurrentPage.appendIfNotDuplicated(contentsOf: newMissions)
-            await loadData()
-        } catch {
-            showError("error_fetching_new_missions" .localized())
+    func fetchNewMissions() async ->  [Mission]? {
+        if hasNextPage {
+            do {
+                let data = try await repository.fetchNewMissions(forPage: page, withLimit: limit)
+                print("for page \(page)")
+                if let missions = data.missions {
+                    page += 1
+                    hasNextPage = data.hasNextPage
+                    return missions
+                }
+            } catch {
+                showError("error_fetching_new_missions" .localized())
+            }
         }
+        return nil
     }
-    
 }
 
 // MARK: - Action Functions
 extension MissionListViewModel {
     
     func loadData() async {
-        if remainedMissionInCurrentPage.count == 0 {
-            await fetchNewMissions()
-        } else {
-            var newLoad: [Mission] = []
-            for i in 0...19 {
-                if i < remainedMissionInCurrentPage.count {
-                    newLoad.append(remainedMissionInCurrentPage[i])
-                    remainedMissionInCurrentPage.remove(at: i)
-                } else {
-                    break
-                }
-            }
-            if newLoad.count != 0 {
-                displayMissions.appendIfNotDuplicated(contentsOf: newLoad)
+        guard !isLoading else {return}
+        isLoading = true
+        if displayMissions.count == remainedMissionInCurrentPage.count && hasNextPage {
+            let missions = await fetchNewMissions()
+            if let missions = missions {
+                remainedMissionInCurrentPage.appendIfNotDuplicated(contentsOf: missions)
             }
         }
         
+        for i in lastAddedPage...(lastAddedPage + 19) {
+            if i < remainedMissionInCurrentPage.count {
+                displayMissions.appendIfNotDuplicated( remainedMissionInCurrentPage[i])
+            } else {
+                break
+            }
+        }
+        lastAddedPage = displayMissions.count - 1
+        if shouldAllowReloadingTableView {
+            reloadTableView()
+        }
+        
+        if displayMissions.count == remainedMissionInCurrentPage.count && !hasNextPage {
+            shouldAllowReloadingTableView = false
+        }
+        isLoading = false
     }
 }
 

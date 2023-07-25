@@ -37,7 +37,6 @@ extension MissionDetailsViewController {
     
     private func setupMissionImageView() {
         missionImageView.setup(withURLString: viewModel.imageURL, name: viewModel.imageURL)
-        print("Amir image")
     }
     
     private func setupTableView() {
@@ -117,6 +116,4 @@ extension MissionDetailsViewController: TableViewDataSourceAndDelegate {
                     UIApplication.shared.open(url, options: [:])
         }
     }
-    
-    
 }
