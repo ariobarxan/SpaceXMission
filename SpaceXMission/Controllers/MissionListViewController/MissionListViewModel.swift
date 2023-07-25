@@ -20,7 +20,7 @@ final class MissionListViewModel {
     private var page: Int = 1
     private var limit: Int = 50
     private var lastAddedMissionIndex = 0
-    private var numberOfMissionsInTableViewPage = 19
+    private let numberOfMissionsInTableViewPage = 19
     private var thereAreMissions = true
     private var shouldAllowReloadingTableView = true
     
@@ -84,6 +84,18 @@ extension MissionListViewModel {
             shouldAllowReloadingTableView = false
         }
         isLoading = false
+    }
+    
+    func pullToRefreshTableViewAction() async {
+        page = 1
+        hasNextPage = true
+        thereAreMissions = true
+        shouldAllowReloadingTableView = true
+        lastAddedMissionIndex = 0
+        availableMissions.removeAll()
+        tableViewMissions.removeAll()
+        reloadTableView()
+        await loadData()
     }
     
     private func thereAreNotAvailableMissions() -> Bool {

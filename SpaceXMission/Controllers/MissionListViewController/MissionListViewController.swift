@@ -13,6 +13,7 @@ final class MissionListViewController: BaseViewController {
     @IBOutlet private(set )weak var missionListTableView: UITableView!
     
     private var viewModel: MissionListViewModel!
+    private var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ extension MissionListViewController {
     
     private func setupViews() {
         setupHeaderView()
+        setupRefreshControl()
         setupTableView()
     }
     
@@ -42,11 +44,17 @@ extension MissionListViewController {
         headerView.backgroundColor = .red
     }
     
+    private func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(refreshTableView), for: UIControl.Event.valueChanged)
+    }
+    
     private func setupTableView() {
         MissionTableViewCell.register(for: missionListTableView)
         missionListTableView.delegate = self
         missionListTableView.dataSource = self
         missionListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        missionListTableView.addSubview(refreshControl)
+        
     }
     
     private func showError(withMessage message: String) {
@@ -78,6 +86,13 @@ extension MissionListViewController {
     private func reloadTableView() {
         mainThread {
             self.missionListTableView.reloadData()
+        }
+    }
+    
+    @objc private func refreshTableView() {
+        Task {
+            await self.viewModel.pullToRefreshTableViewAction()
+            self.refreshControl.endRefreshing()
         }
     }
 }
