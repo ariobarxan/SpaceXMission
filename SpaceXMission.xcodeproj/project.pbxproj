@@ -14,6 +14,7 @@
 		EB039C132A696BCA006DEFC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB039C122A696BCA006DEFC5 /* Assets.xcassets */; };
 		EB039C162A696BCA006DEFC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB039C142A696BCA006DEFC5 /* LaunchScreen.storyboard */; };
 		EB05B4892A702589004F5477 /* AssetEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4882A702589004F5477 /* AssetEnum.swift */; };
+		EB05B4B02A70DF20004F5477 /* NetworkMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4AF2A70DF20004F5477 /* NetworkMonitorService.swift */; };
 		EB207CAE2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */; };
 		EB207CB12A6D9C510086784B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB207CB02A6D9C510086784B /* CoreDataService.swift */; };
 		EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802DB2A6975A7003A8C8D /* RequestManager.swift */; };
@@ -64,6 +65,7 @@
 		EB039C152A696BCA006DEFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB039C172A696BCA006DEFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB05B4882A702589004F5477 /* AssetEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEnum.swift; sourceTree = "<group>"; };
+		EB05B4AF2A70DF20004F5477 /* NetworkMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorService.swift; sourceTree = "<group>"; };
 		EB207CAD2A6D9A3D0086784B /* SpaceXMission.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXMission.xcdatamodel; sourceTree = "<group>"; };
 		EB207CB02A6D9C510086784B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		EB2802DB2A6975A7003A8C8D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -186,7 +188,7 @@
 			children = (
 				EB207CAF2A6D9B990086784B /* CoreDataService */,
 				EB67CB922A6A7EA40050F37D /* ImageCacheService */,
-				EB2802DA2A69758C003A8C8D /* NetworkService */,
+				EB2802DA2A69758C003A8C8D /* NetworkServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -272,7 +274,7 @@
 			path = APIModels;
 			sourceTree = "<group>";
 		};
-		EB2802DA2A69758C003A8C8D /* NetworkService */ = {
+		EB2802DA2A69758C003A8C8D /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
 				EB2802DB2A6975A7003A8C8D /* RequestManager.swift */,
@@ -283,8 +285,9 @@
 				EB2802E52A6975E8003A8C8D /* RequestBodyManager.swift */,
 				EB2802E72A6975F3003A8C8D /* WebService.swift */,
 				EB2803352A6A622E003A8C8D /* NetworkError.swift */,
+				EB05B4AF2A70DF20004F5477 /* NetworkMonitorService.swift */,
 			);
-			path = NetworkService;
+			path = NetworkServices;
 			sourceTree = "<group>";
 		};
 		EB2802ED2A6976C8003A8C8D /* Utils */ = {
@@ -469,6 +472,7 @@
 				EB2803362A6A622E003A8C8D /* NetworkError.swift in Sources */,
 				EB2802F42A697B0E003A8C8D /* MissionListViewModel.swift in Sources */,
 				EB7346802A696EDD007B3CD4 /* Coordinator.swift in Sources */,
+				EB05B4B02A70DF20004F5477 /* NetworkMonitorService.swift in Sources */,
 				EB73467E2A696EAD007B3CD4 /* UIViewControllerExtension.swift in Sources */,
 				EB2802DE2A6975B6003A8C8D /* RequestMethodManager.swift in Sources */,
 				EB7346842A696F24007B3CD4 /* BaseViewController.swift in Sources */,

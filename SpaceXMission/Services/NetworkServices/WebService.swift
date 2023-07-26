@@ -30,15 +30,21 @@ final class WebService {
     
     private func baseRequestGetData(_ requestManager :RequestManager ) async throws -> Data {
         // TODO: - Enahnce logs
+        guard NetworkMonitorService.shared.isConnected else {
+            Log.d()
+            throw NetworkError.noConnection
+        }
         guard let request = try? requestManager.asURLRequest() else {
             throw NetworkError.urlStringISInvalid
         }
         guard let (data, response) = try? await URLSession.shared.data(for: request) else {
+            Log.d()
             throw NetworkError.badUrl
         }
         guard let httpResponse = response as? HTTPURLResponse,
             httpResponse.statusCode == 200
         else {
+            Log.d()
             throw NetworkError.invalidResponse
         }
         return data
