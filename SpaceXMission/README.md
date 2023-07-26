@@ -4,7 +4,6 @@
 - [ ] Banner Manager for showing error to the user
 - [x] Check Network Connectivity
 - [ ] Cache images with url and id salt hash
-- [ ] In Network Layer handle reachability problem some data needs vpn(image urls)
 - [ ] Testing
 - [ ] Convert at least one of the ViewModel to Combine flow
 - [x] Implement pagination -> TableView with CollectionView or CollectionView Composition or read
@@ -18,4 +17,5 @@
 - [ ] Add Activity indicator for table loading
 - [ ] Handle purging data from cells after they left the visibleArea.
 - [ ] Supporting dark mode
-- [ ] Font, color, line margine for texts
+- [ ] Font, color, line margin for texts
+- [ ] Handle fonts centrally

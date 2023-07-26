@@ -15,6 +15,7 @@
 		EB039C162A696BCA006DEFC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB039C142A696BCA006DEFC5 /* LaunchScreen.storyboard */; };
 		EB05B4892A702589004F5477 /* AssetEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4882A702589004F5477 /* AssetEnum.swift */; };
 		EB05B4B02A70DF20004F5477 /* NetworkMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4AF2A70DF20004F5477 /* NetworkMonitorService.swift */; };
+		EB05B4B22A70E7D0004F5477 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB05B4B12A70E7D0004F5477 /* Colors.xcassets */; };
 		EB207CAE2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */; };
 		EB207CB12A6D9C510086784B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB207CB02A6D9C510086784B /* CoreDataService.swift */; };
 		EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802DB2A6975A7003A8C8D /* RequestManager.swift */; };
@@ -66,6 +67,7 @@
 		EB039C172A696BCA006DEFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB05B4882A702589004F5477 /* AssetEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEnum.swift; sourceTree = "<group>"; };
 		EB05B4AF2A70DF20004F5477 /* NetworkMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorService.swift; sourceTree = "<group>"; };
+		EB05B4B12A70E7D0004F5477 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EB207CAD2A6D9A3D0086784B /* SpaceXMission.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXMission.xcdatamodel; sourceTree = "<group>"; };
 		EB207CB02A6D9C510086784B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		EB2802DB2A6975A7003A8C8D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				EB039C172A696BCA006DEFC5 /* Info.plist */,
 				EB039C122A696BCA006DEFC5 /* Assets.xcassets */,
+				EB05B4B12A70E7D0004F5477 /* Colors.xcassets */,
 				EB2803002A698E30003A8C8D /* Localizable.strings */,
 				EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */,
 			);
@@ -437,6 +440,7 @@
 				EB73468D2A6972AE007B3CD4 /* MissionTableViewCell.xib in Resources */,
 				EB5883262A6B98DE003847A4 /* MissionDetailsTableViewCell.xib in Resources */,
 				EB039C112A696BCA006DEFC5 /* Main.storyboard in Resources */,
+				EB05B4B22A70E7D0004F5477 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,8 +650,7 @@
 				INFOPLIST_FILE = SpaceXMission/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,9 +659,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AmirReza.SpaceXMisson.SpaceXMission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -674,8 +680,7 @@
 				INFOPLIST_FILE = SpaceXMission/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -684,9 +689,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AmirReza.SpaceXMisson.SpaceXMission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
