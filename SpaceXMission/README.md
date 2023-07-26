@@ -17,5 +17,6 @@
 - [ ] Add Activity indicator for table loading
 - [ ] Handle purging data from cells after they left the visibleArea.
 - [ ] Supporting dark mode
-- [ ] Font, color, line margin for texts
+- [ ] Font, color, line margin for texts consider accessibility 
 - [ ] Handle fonts centrally
+- [ ] Beautify UI

@@ -16,6 +16,7 @@
 		EB05B4892A702589004F5477 /* AssetEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4882A702589004F5477 /* AssetEnum.swift */; };
 		EB05B4B02A70DF20004F5477 /* NetworkMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4AF2A70DF20004F5477 /* NetworkMonitorService.swift */; };
 		EB05B4B22A70E7D0004F5477 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB05B4B12A70E7D0004F5477 /* Colors.xcassets */; };
+		EB05B4B42A70E954004F5477 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B4B32A70E954004F5477 /* ColorEnum.swift */; };
 		EB207CAE2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB207CAC2A6D9A3D0086784B /* SpaceXMission.xcdatamodeld */; };
 		EB207CB12A6D9C510086784B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB207CB02A6D9C510086784B /* CoreDataService.swift */; };
 		EB2802DC2A6975A7003A8C8D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2802DB2A6975A7003A8C8D /* RequestManager.swift */; };
@@ -68,6 +69,7 @@
 		EB05B4882A702589004F5477 /* AssetEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEnum.swift; sourceTree = "<group>"; };
 		EB05B4AF2A70DF20004F5477 /* NetworkMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorService.swift; sourceTree = "<group>"; };
 		EB05B4B12A70E7D0004F5477 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EB05B4B32A70E954004F5477 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		EB207CAD2A6D9A3D0086784B /* SpaceXMission.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceXMission.xcdatamodel; sourceTree = "<group>"; };
 		EB207CB02A6D9C510086784B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		EB2802DB2A6975A7003A8C8D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -181,7 +183,6 @@
 			children = (
 				EB7346852A696F3A007B3CD4 /* TypeAliases.swift */,
 				EB2803042A699638003A8C8D /* Functions.swift */,
-				EB05B4882A702589004F5477 /* AssetEnum.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -297,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				EB2802EE2A6976D0003A8C8D /* Log.swift */,
+				EB05B4882A702589004F5477 /* AssetEnum.swift */,
+				EB05B4B32A70E954004F5477 /* ColorEnum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				EB2803052A699638003A8C8D /* Functions.swift in Sources */,
 				EB2802E42A6975DD003A8C8D /* RequestHeaderManager.swift in Sources */,
 				EB7346822A696EE7007B3CD4 /* MainCoordinator.swift in Sources */,
+				EB05B4B42A70E954004F5477 /* ColorEnum.swift in Sources */,
 				EB2802F12A697938003A8C8D /* MissionRepository.swift in Sources */,
 				EB52524E2A6C4030000A27C5 /* DateExtension.swift in Sources */,
 				EB2802E62A6975E8003A8C8D /* RequestBodyManager.swift in Sources */,
